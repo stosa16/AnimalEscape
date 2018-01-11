@@ -1,12 +1,12 @@
 fileFormatVersion: 2
-guid: 59b3c08171e901f49aed7bb68b3ad9d4
-timeCreated: 1515661871
+guid: 6ca81e634256e2c4cb2add34f4741487
+timeCreated: 1515674096
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: t1
-    21300002: t2
-    21300004: t3
+    21300000: table_0
+    21300002: table_1
+    21300004: table_2
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -99,27 +99,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: t1
+      name: table_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 34
-        height: 57
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: t2
-      rect:
-        serializedVersion: 2
-        x: 44
-        y: 16
         width: 64
-        height: 41
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -127,13 +113,27 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: t3
+      name: table_1
       rect:
         serializedVersion: 2
-        x: 117
+        x: 64
         y: 0
-        width: 34
-        height: 57
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: table_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

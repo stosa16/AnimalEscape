@@ -9,9 +9,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: floor
+  m_Name: wall_spritesheet_0
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 21300000, guid: 680100a8ec6867a4a993d33b109333fc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 914b39fb9a0bb17418b07bd7cdad99ae, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1

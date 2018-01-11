@@ -6,6 +6,9 @@ TagManager:
   tags:
   - StopObstacle
   - CatchObstacle
+  - CatchView
+  - Spieler
+  - Door
   layers:
   - Default
   - TransparentFX
