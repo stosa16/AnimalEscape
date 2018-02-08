@@ -52,8 +52,9 @@ public class PlayerScript : CharacterScript {
         {
             Debug.Log("It is a stopping Obstacle");
         }
-        if (collision.gameObject.tag.Equals("CatchObstacle"))
+        if (collision.gameObject.tag.Equals("CatchObstacle") || collision.gameObject.tag.Equals("Camera"))
         {
+            gameObject.GetComponent<Rigidbody2D>().isKinematic = true;
             Debug.Log("It is a catching obstacele");
             gameOver.SetActive(true);
             _gameIsOver = true;

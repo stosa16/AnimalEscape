@@ -9,6 +9,10 @@ TagManager:
   - CatchView
   - Spieler
   - Door
+  - Camera
+  - CF
+  - CHL
+  - CHR
   layers:
   - Default
   - TransparentFX
