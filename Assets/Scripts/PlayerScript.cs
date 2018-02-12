@@ -1,25 +1,27 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using Assets.Scripts;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerScript : CharacterScript {
-    
+
     public bool _gameIsOver;
     public GameObject gameOver;
     public GameObject levelSuccess;
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         _gameIsOver = false;
-	}
-	
-	// Update is called once per frame
-	protected override void Update () {
+    }
+
+    // Update is called once per frame
+    protected override void Update()
+    {
         if (_gameIsOver)
             return;
         GetInput();
         Move();
-	}
+    }
 
     private void GetInput()
     {
@@ -47,7 +49,7 @@ public class PlayerScript : CharacterScript {
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Debug.Log("Player Script - Dog is CollisionDetector");
-        
+
         if (collision.gameObject.tag.Equals("StopObstacle"))
         {
             Debug.Log("It is a stopping Obstacle");
@@ -62,7 +64,16 @@ public class PlayerScript : CharacterScript {
         {
             Debug.Log("It is a catching obstacele");
             levelSuccess.SetActive(true);
-            _gameIsOver = true;
+            //_gameIsOver = true;
+            SceneManager.LoadScene("LevelCages");
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag.Equals("OtherDog"))
+        {
+            collision.gameObject.GetComponent<OtherDogScript>().ChangeDirection();
         }
     }
 

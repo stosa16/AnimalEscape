@@ -8,3 +8,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LevelOne.unity
     guid: 79e7cf0ba1722f74cb175abdf80c55fa
+  - enabled: 1
+    path: Assets/Scenes/LevelCages.unity
+    guid: ae4fea70ff8972f49ac1208d14923158

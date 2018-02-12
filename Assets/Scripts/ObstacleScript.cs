@@ -13,4 +13,5 @@ public class ObstacleScript : MonoBehaviour {
 	void Update () {
 		
 	}
+
 }

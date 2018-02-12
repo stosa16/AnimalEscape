@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using Assets.Scripts;
 using UnityEngine;
 
 public class GuardScript : MonoBehaviour {
@@ -9,14 +8,16 @@ public class GuardScript : MonoBehaviour {
     public float distance;
     private Vector2 originPosition;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start()
+    {
         originPosition = gameObject.transform.position;
-	}
-	
-	// Update is called once per frame
-	void Update () {
-        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
         gameObject.transform.position = new Vector2(gameObject.transform.position.x + (xMovement * Time.deltaTime), gameObject.transform.position.y + (yMovement * Time.deltaTime));
         if (gameObject.transform.position.y <= originPosition.y - distance)
         {
@@ -35,4 +36,13 @@ public class GuardScript : MonoBehaviour {
             xMovement *= -1;
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag.Equals("OtherDog"))
+        {
+            collision.gameObject.GetComponent<OtherDogScript>().ChangeDirection();
+        }
+    }
+
 }

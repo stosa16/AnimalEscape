@@ -9,6 +9,7 @@ TagManager:
   - CatchView
   - Spieler
   - Door
+  - OtherDog
   layers:
   - Default
   - TransparentFX
