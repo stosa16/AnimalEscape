@@ -58,15 +58,14 @@ public class PlayerScript : CharacterScript {
         {
             gameObject.GetComponent<Rigidbody2D>().isKinematic = true;
             Debug.Log("It is a catching obstacele");
-            gameOver.SetActive(true);
-            _gameIsOver = true;
+            SetGameOver();
         }
         if (collision.gameObject.tag.Equals("Door"))
         {
             Debug.Log("It is a catching obstacele");
             levelSuccess.SetActive(true);
             //_gameIsOver = true;
-            SceneManager.LoadScene("LevelCages");
+            SceneManager.LoadScene("LevelWithCages");
         }
     }
 
@@ -78,4 +77,17 @@ public class PlayerScript : CharacterScript {
         }
     }
 
+    public void SetGameOver(){
+        gameOver.SetActive(true);
+        _gameIsOver = true;
+
+        var otherDogs = GameObject.FindGameObjectsWithTag("OtherDog");
+
+        foreach (var dog in otherDogs)
+        {
+            var script = dog.GetComponent<OtherDogFolowingMainDogScript>();
+            if(script != null)
+                script.IsFree = false;
+        }
+    }
 }

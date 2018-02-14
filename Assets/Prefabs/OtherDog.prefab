@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212030475241030348}
   - component: {fileID: 50312414250277912}
   - component: {fileID: 60541708732327294}
-  - component: {fileID: 114608051528551130}
+  - component: {fileID: 114631475106441334}
   m_Layer: 0
   m_Name: OtherDog
   m_TagString: OtherDog
@@ -36,8 +36,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1049953175616020}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.429634, y: 128.67313, z: -0.022409227}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.01, y: 0.04, z: 5.190043}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -51,7 +51,7 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1049953175616020}
   m_BodyType: 0
-  m_Simulated: 1
+  m_Simulated: 0
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
@@ -91,7 +91,7 @@ PolygonCollider2D:
       - {x: 0.12, y: -0.24}
       - {x: 0.12, y: 0.24}
       - {x: -0.12, y: 0.24}
---- !u!114 &114608051528551130
+--- !u!114 &114631475106441334
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -103,7 +103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
-  currentDirection: {x: 0, y: 1}
+  currentDirection: {x: 0, y: 0}
 --- !u!212 &212030475241030348
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -137,7 +137,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300004, guid: 000735a7770b3444dab0aa2dd9de2eb3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
