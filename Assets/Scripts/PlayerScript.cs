@@ -7,11 +7,13 @@ public class PlayerScript : CharacterScript {
     public bool _gameIsOver;
     public GameObject gameOver;
     public GameObject levelSuccess;
+    private Animator _animator;
 
     // Use this for initialization
     void Start () {
         _gameIsOver = false;
-	}
+        _animator = this.GetComponent<Animator>();
+    }
 	
 	// Update is called once per frame
 	protected override void Update () {
@@ -27,21 +29,24 @@ public class PlayerScript : CharacterScript {
 
         if (Input.GetKey(KeyCode.UpArrow))
         {
+            _animator.SetInteger("Direction", 4);
             direction += Vector2.up;
         }
         else if (Input.GetKey(KeyCode.DownArrow))
         {
+            _animator.SetInteger("Direction", 0);
             direction += Vector2.down;
         }
         else if (Input.GetKey(KeyCode.LeftArrow))
         {
+            _animator.SetInteger("Direction", 1);
             direction += Vector2.left;
         }
         else if (Input.GetKey(KeyCode.RightArrow))
         {
+            _animator.SetInteger("Direction", 2);
             direction += Vector2.right;
         }
-
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
