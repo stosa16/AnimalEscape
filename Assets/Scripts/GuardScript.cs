@@ -41,7 +41,7 @@ public class GuardScript : MonoBehaviour {
     {
         if (collision.gameObject.tag.Equals("OtherDog"))
         {
-            collision.gameObject.GetComponent<OtherDogScript>().ChangeDirection();
+            collision.gameObject.GetComponent<OtherDogScript>().ChangeDirectionFromGuard();
         }
     }
 

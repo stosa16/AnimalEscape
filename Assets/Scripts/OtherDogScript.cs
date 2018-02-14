@@ -18,7 +18,7 @@ namespace Assets.Scripts {
             transform.Translate(currentDirection * speed * Time.deltaTime);
         }
 
-        public void ChangeDirection()
+        public void ChangeDirectionFromObstacle()
         {
             var dir = currentDirection;
             if (dir == Vector2.up)
@@ -33,11 +33,26 @@ namespace Assets.Scripts {
             currentDirection = dir;
         }
 
+        public void ChangeDirectionFromGuard()
+        {
+            var dir = currentDirection;
+            if (dir == Vector2.up)
+                dir = Vector2.down;
+            else if (dir == Vector2.left)
+                dir = Vector2.right;
+            else if (dir == Vector2.down)
+                dir = Vector2.up;
+            else
+                dir = Vector2.left;
+
+            currentDirection = dir;
+        }
+
         private void OnCollisionEnter2D(Collision2D collision)
         {
-            ChangeDirection();
+            ChangeDirectionFromObstacle();
         }
-        private void OnTriggerEnter(Collider other)
+        private void OnTriggerEnter2D(Collider2D collision)
         {
             
         }
