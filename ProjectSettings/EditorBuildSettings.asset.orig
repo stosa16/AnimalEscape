@@ -15,7 +15,10 @@ EditorBuildSettings:
     path: Assets/Scenes/LevelOne.unity
     guid: 79e7cf0ba1722f74cb175abdf80c55fa
   - enabled: 1
-    path: Assets/Scenes/MarkusLevelOne.unity
-    guid: 6e84dc90bdbf41f40beb49cdcc528d3f
+<<<<<<< HEAD
     path: Assets/Scenes/LevelCages.unity
     guid: ae4fea70ff8972f49ac1208d14923158
+=======
+    path: Assets/Scenes/MarkusLevelOne.unity
+    guid: 6e84dc90bdbf41f40beb49cdcc528d3f
+>>>>>>> master

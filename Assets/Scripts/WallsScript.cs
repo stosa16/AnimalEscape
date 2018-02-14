@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObstacleScript : MonoBehaviour {
+public class WallsScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -13,5 +13,8 @@ public class ObstacleScript : MonoBehaviour {
 	void Update () {
 		
 	}
-
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        
+    }
 }

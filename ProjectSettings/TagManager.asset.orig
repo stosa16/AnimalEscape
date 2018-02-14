@@ -9,13 +9,14 @@ TagManager:
   - CatchView
   - Spieler
   - Door
+<<<<<<< HEAD
   - OtherDog
+=======
   - Camera
   - CF
   - CHL
   - CHR
-  - Key
-  - Cage
+>>>>>>> master
   layers:
   - Default
   - TransparentFX

@@ -1,32 +1,34 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using Assets.Scripts;
 using UnityEngine;
 
 public class FieldOfViewScript : MonoBehaviour {
 
     public GameObject GameOver;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    // Use this for initialization
+    void Start()
+    {
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("Gesichtet");
-        if(collision.gameObject.tag.Equals("Spieler"))
+        var tag = collision.gameObject.tag;
+        if (tag.Equals("Spieler") || tag.Equals("OtherDog"))
         {
             Debug.Log("Spieler detected");
-            GameOver.SetActive(true);
-            GameObject player = collision.gameObject;
+            GameObject player = GameObject.FindGameObjectWithTag("Spieler");
             PlayerScript ps = player.GetComponent<PlayerScript>();
-            ps._gameIsOver = true;
+            //ps._gameIsOver = true;
+            //GameOver.SetActive(true);
+            ps.SetGameOver();
         }
-
     }
 }

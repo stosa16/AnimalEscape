@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public abstract class CharacterScript : MonoBehaviour {
 
@@ -9,15 +7,17 @@ public abstract class CharacterScript : MonoBehaviour {
 
     protected Vector2 direction;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	protected virtual void Update () {
+    // Use this for initialization
+    void Start()
+    {
+
+    }
+
+    // Update is called once per frame
+    protected virtual void Update()
+    {
         Move();
-	}
+    }
 
     public void Move()
     {
