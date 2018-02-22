@@ -8,6 +8,7 @@ public class PlayerScript : CharacterScript {
     public GameObject gameOver;
     public GameObject levelSuccess;
     private Animator _animator;
+    private int _oldAnimatorDirection;
 
     // Use this for initialization
     void Start()
@@ -28,27 +29,34 @@ public class PlayerScript : CharacterScript {
     private void GetInput()
     {
         direction = Vector2.zero;
+        var animatorDirection = 0;
 
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            _animator.SetInteger("Direction", 4);
+            animatorDirection = Constants.DirectionUp;
             direction += Vector2.up;
         }
         else if (Input.GetKey(KeyCode.DownArrow))
         {
-            _animator.SetInteger("Direction", 0);
+            animatorDirection = Constants.DirectionDown;
             direction += Vector2.down;
         }
         else if (Input.GetKey(KeyCode.LeftArrow))
         {
-            _animator.SetInteger("Direction", 1);
+            animatorDirection = Constants.DirectionLeft;
             direction += Vector2.left;
         }
         else if (Input.GetKey(KeyCode.RightArrow))
         {
-            _animator.SetInteger("Direction", 2);
+            animatorDirection = Constants.DirectionRight;
             direction += Vector2.right;
+        } else
+        {
+            animatorDirection = _oldAnimatorDirection * 10;
         }
+
+        _oldAnimatorDirection = animatorDirection;
+        _animator.SetInteger("Direction", animatorDirection);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
