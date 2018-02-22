@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 60172683944841106}
   - component: {fileID: 95687850119137820}
   m_Layer: 0
-  m_Name: Guard_Black
+  m_Name: GuardWhiteAnimatedTop-Bottom
   m_TagString: CatchObstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

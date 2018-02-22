@@ -88,6 +88,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaDirect: 0.5
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
+    m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -112,6 +113,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!4 &31675779 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4398800311216392, guid: 47dee1584f0f54046994a8864ce01945,
+    type: 2}
+  m_PrefabInternal: {fileID: 44670760}
 --- !u!1 &33973952
 GameObject:
   m_ObjectHideFlags: 0
@@ -3834,7 +3840,7 @@ Transform:
   m_LocalPosition: {x: -0.6867119, y: 0.010913682, z: -0.048828125}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 847127306}
+  - {fileID: 31675779}
   - {fileID: 747835140}
   - {fileID: 985319085}
   m_Father: {fileID: 0}
@@ -4021,58 +4027,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4862439640155578, guid: 72a9eeecd52b7c949b36c0e45a9d6054,
     type: 2}
   m_PrefabInternal: {fileID: 1082836182}
---- !u!1001 &807488047
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 847127306}
-    m_Modifications:
-    - target: {fileID: 4744828155313930, guid: ab317e9cf43c5ee4d97f7ef23146878d, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4744828155313930, guid: ab317e9cf43c5ee4d97f7ef23146878d, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4744828155313930, guid: ab317e9cf43c5ee4d97f7ef23146878d, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -0.16699219
-      objectReference: {fileID: 0}
-    - target: {fileID: 4744828155313930, guid: ab317e9cf43c5ee4d97f7ef23146878d, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4744828155313930, guid: ab317e9cf43c5ee4d97f7ef23146878d, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4744828155313930, guid: ab317e9cf43c5ee4d97f7ef23146878d, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4744828155313930, guid: ab317e9cf43c5ee4d97f7ef23146878d, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4744828155313930, guid: ab317e9cf43c5ee4d97f7ef23146878d, type: 2}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114739021636685834, guid: ab317e9cf43c5ee4d97f7ef23146878d,
-        type: 2}
-      propertyPath: GameOver
-      value: 
-      objectReference: {fileID: 2021297828}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: ab317e9cf43c5ee4d97f7ef23146878d, type: 2}
-  m_IsPrefabParent: 0
---- !u!4 &847127306 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4550461126919490, guid: 47dee1584f0f54046994a8864ce01945,
-    type: 2}
-  m_PrefabInternal: {fileID: 44670760}
 --- !u!4 &982444432 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4905254381347088, guid: 38d5c915be042784ca955fb263329e6e,
@@ -5781,6 +5735,28 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 227afc884a4639d4da26a6c84804a6ba, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1341984908 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1127945380604230, guid: 38d5c915be042784ca955fb263329e6e,
+    type: 2}
+  m_PrefabInternal: {fileID: 114445441}
+--- !u!95 &1341984909
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1341984908}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cc82396d9b59ae348b767e8028b8e3ae, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1348053526
 GameObject:
   m_ObjectHideFlags: 0
