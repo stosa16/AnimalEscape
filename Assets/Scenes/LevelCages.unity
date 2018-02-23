@@ -3538,6 +3538,28 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 38d5c915be042784ca955fb263329e6e, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &114445442 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1127945380604230, guid: 38d5c915be042784ca955fb263329e6e,
+    type: 2}
+  m_PrefabInternal: {fileID: 114445441}
+--- !u!95 &114445443
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 114445442}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cc82396d9b59ae348b767e8028b8e3ae, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &161948916
 GameObject:
   m_ObjectHideFlags: 0
@@ -3760,6 +3782,8 @@ MonoBehaviour:
   xMovement: 0
   yMovement: -0.35
   distance: 2
+  initialDirection: 0
+  _animator: {fileID: 0}
 --- !u!212 &169243805
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4009,6 +4033,8 @@ MonoBehaviour:
   xMovement: 0
   yMovement: -0.35
   distance: 2
+  initialDirection: 0
+  _animator: {fileID: 0}
 --- !u!212 &259299043
 SpriteRenderer:
   m_ObjectHideFlags: 0
