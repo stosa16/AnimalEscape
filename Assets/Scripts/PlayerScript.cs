@@ -80,6 +80,11 @@ public class PlayerScript : CharacterScript {
             //_gameIsOver = true;
             SceneManager.LoadScene("LevelWithCages");
         }
+
+        if (collision.gameObject.tag.Equals("AlarmSystem"))
+        {
+            Debug.Log("Dog is collliding with Alarm system");
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

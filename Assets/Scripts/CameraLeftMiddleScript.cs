@@ -24,7 +24,6 @@ public class CameraLeftMiddleScript : MonoBehaviour {
 
     void RotateCamera()
     {
-        Debug.Log(rotation_speed + " Sekunden sind vergangen.");
 
         if (current_cam == cam_right && last_cam == cam_right)
         {
