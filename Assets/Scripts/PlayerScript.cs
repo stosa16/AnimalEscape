@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerScript : CharacterScript {
 
+    public bool inputEnabled = true;
     public bool _gameIsOver;
     public GameObject gameOver;
     public GameObject levelSuccess;
@@ -30,6 +31,13 @@ public class PlayerScript : CharacterScript {
     {
         direction = Vector2.zero;
         var animatorDirection = 0;
+        if (inputEnabled == false)
+        {
+            animatorDirection = _oldAnimatorDirection * 10;
+            _oldAnimatorDirection = animatorDirection;
+            _animator.SetInteger("Direction", animatorDirection);
+            return;
+        }
 
         if (Input.GetKey(KeyCode.UpArrow))
         {
@@ -93,6 +101,10 @@ public class PlayerScript : CharacterScript {
         {
             collision.gameObject.GetComponent<OtherDogScript>().ChangeDirectionFromObstacle();
         }
+        if (collision.gameObject.tag.Equals("DialogObstacle"))
+        {
+            collision.gameObject.GetComponent<DialogueTrigger>().TriggerDialogue();
+        }
     }
 
     public void SetGameOver(){
@@ -107,5 +119,15 @@ public class PlayerScript : CharacterScript {
             if(script != null)
                 script.IsFree = false;
         }
+    }
+
+    public void DisableInput()
+    {
+        inputEnabled = false;
+    }
+
+    public void EnableInput()
+    {
+        inputEnabled = true;
     }
 }

@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class DialogueTrigger : MonoBehaviour {
 
+    public GameObject dogPlayer;
     public Dialogue dialogue;
 
     public void TriggerDialogue()
     {
-        FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+        FindObjectOfType<DialogueManager>().StartDialogue(dialogue, dogPlayer);
     }
 }
