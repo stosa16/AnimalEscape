@@ -23,7 +23,6 @@ public class CameraTopMiddleScript : MonoBehaviour {
 
     void RotateCamera()
     {
-        Debug.Log(rotation_speed + " Sekunden sind vergangen.");
 
         if (current_cam == cam_front && last_cam == cam_front)
         {

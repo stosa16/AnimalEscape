@@ -16,6 +16,7 @@ TagManager:
   - CHR
   - Key
   - Cage
+  - DialogObstacle
   layers:
   - Default
   - TransparentFX

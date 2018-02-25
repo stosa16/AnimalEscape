@@ -22,7 +22,6 @@ public class CameraRightTopCornerScript : MonoBehaviour {
 
     void RotateCamera()
     {
-        Debug.Log(rotation_speed + " Sekunden sind vergangen.");
 
         if (current_cam == cam_half_left && last_cam == cam_half_left)
         {

@@ -1,31 +1,28 @@
 ﻿using Assets.Scripts;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PlayerScript : CharacterScript {
 
+    public bool inputEnabled = true;
     public bool _gameIsOver;
     public GameObject gameOver;
     public GameObject levelSuccess;
     private Animator _animator;
+    private int _oldAnimatorDirection;
+
 
     // Use this for initialization
     void Start()
     {
         _gameIsOver = false;
-<<<<<<< HEAD
         _animator = this.GetComponent<Animator>();
-    }
-	
-	// Update is called once per frame
-	protected override void Update () {
-=======
     }
 
     // Update is called once per frame
     protected override void Update()
     {
->>>>>>> feature/Level_Cages
         if (_gameIsOver)
             return;
         GetInput();
@@ -35,27 +32,47 @@ public class PlayerScript : CharacterScript {
     private void GetInput()
     {
         direction = Vector2.zero;
+        var animatorDirection = 0;
+        if (inputEnabled == false)
+        {
+            animatorDirection = _oldAnimatorDirection * 10;
+            _oldAnimatorDirection = animatorDirection;
+            _animator.SetInteger("Direction", animatorDirection);
+            return;
+        }
 
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            _animator.SetInteger("Direction", 4);
+            animatorDirection = Constants.DirectionUp;
             direction += Vector2.up;
         }
         else if (Input.GetKey(KeyCode.DownArrow))
         {
-            _animator.SetInteger("Direction", 0);
+            animatorDirection = Constants.DirectionDown;
             direction += Vector2.down;
         }
         else if (Input.GetKey(KeyCode.LeftArrow))
         {
-            _animator.SetInteger("Direction", 1);
+            animatorDirection = Constants.DirectionLeft;
             direction += Vector2.left;
         }
         else if (Input.GetKey(KeyCode.RightArrow))
         {
-            _animator.SetInteger("Direction", 2);
+            animatorDirection = Constants.DirectionRight;
             direction += Vector2.right;
+        } else
+        {
+            animatorDirection = _oldAnimatorDirection * 10;
         }
+<<<<<<< HEAD
+        //previousDirections.Add(direction);
+        //if(previousDirections.Count == 51)
+        //    previousDirections.RemoveAt(0);
+=======
+
+        _oldAnimatorDirection = animatorDirection;
+        _animator.SetInteger("Direction", animatorDirection);
+>>>>>>> c595e3fafe33791e2d7383bd0eb2ff3a6aa4a1c4
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -79,6 +96,11 @@ public class PlayerScript : CharacterScript {
             //_gameIsOver = true;
             SceneManager.LoadScene("LevelWithCages");
         }
+
+        if (collision.gameObject.tag.Equals("AlarmSystem"))
+        {
+            Debug.Log("Dog is collliding with Alarm system");
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -86,6 +108,10 @@ public class PlayerScript : CharacterScript {
         if (collision.gameObject.tag.Equals("OtherDog"))
         {
             collision.gameObject.GetComponent<OtherDogScript>().ChangeDirectionFromObstacle();
+        }
+        if (collision.gameObject.tag.Equals("DialogObstacle"))
+        {
+            collision.gameObject.GetComponent<DialogueTrigger>().TriggerDialogue();
         }
     }
 
@@ -101,5 +127,15 @@ public class PlayerScript : CharacterScript {
             if(script != null)
                 script.IsFree = false;
         }
+    }
+
+    public void DisableInput()
+    {
+        inputEnabled = false;
+    }
+
+    public void EnableInput()
+    {
+        inputEnabled = true;
     }
 }

@@ -21,6 +21,10 @@ public class FieldOfViewScript : MonoBehaviour {
     {
         Debug.Log("Gesichtet");
         var tag = collision.gameObject.tag;
+        if (gameObject.tag.Equals("DialogObstacle"))
+        {
+            return;
+        }
         if (tag.Equals("Spieler") || tag.Equals("OtherDog"))
         {
             Debug.Log("Spieler detected");
