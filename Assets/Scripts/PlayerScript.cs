@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,6 +9,7 @@ public class PlayerScript : CharacterScript {
     public GameObject gameOver;
     public GameObject levelSuccess;
     private Animator _animator;
+
 
     // Use this for initialization
     void Start()
@@ -49,6 +51,9 @@ public class PlayerScript : CharacterScript {
             _animator.SetInteger("Direction", 2);
             direction += Vector2.right;
         }
+        //previousDirections.Add(direction);
+        //if(previousDirections.Count == 51)
+        //    previousDirections.RemoveAt(0);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

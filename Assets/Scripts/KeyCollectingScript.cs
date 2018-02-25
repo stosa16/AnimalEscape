@@ -25,8 +25,8 @@ public class KeyCollectingScript : MonoBehaviour {
         {
             var dogFromCage = collision.gameObject.transform.GetChild(0).gameObject;
             var theDogScript = dogFromCage.GetComponent<OtherDogFolowingMainDogScript>();
-            theDogScript.IsFree = true;
-            theDogScript.MakeItSimulated();
+            theDogScript.StartFollowingMainDog();
+
         }
         else if (collision.gameObject.tag.Equals("Key"))
         {
