@@ -88,6 +88,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaDirect: 0.5
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
+    m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -3557,11 +3558,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114462966423831190, guid: 38d5c915be042784ca955fb263329e6e,
-        type: 2}
-      propertyPath: previousDirections.Array.size
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 4905254381347088, guid: 38d5c915be042784ca955fb263329e6e, type: 2}
       propertyPath: m_LocalPosition.x
       value: -4.84
@@ -3629,11 +3625,6 @@ Prefab:
         type: 2}
       propertyPath: m_Constraints
       value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114462966423831190, guid: 38d5c915be042784ca955fb263329e6e,
-        type: 2}
-      propertyPath: limitOfPreviousDirections
-      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 38d5c915be042784ca955fb263329e6e, type: 2}
@@ -6073,8 +6064,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1171120154}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.84, y: -4.87, z: 95}
-  m_LocalScale: {x: 0.01205525, y: 0.01205525, z: 0.01205525}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 152830509}
   - {fileID: 2076034538}
@@ -6082,11 +6073,11 @@ RectTransform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
 --- !u!1001 &1178921354
 Prefab:
   m_ObjectHideFlags: 0
@@ -6522,27 +6513,6 @@ Prefab:
     - target: {fileID: 1191818762937416, guid: 93c6f5a4ed19d7c4197f1833d3ec952e, type: 2}
       propertyPath: m_Name
       value: BackgroundTime
-      objectReference: {fileID: 0}
-    - target: {fileID: 114020840237212108, guid: 93c6f5a4ed19d7c4197f1833d3ec952e,
-        type: 2}
-      propertyPath: m_FontData.m_Font
-      value: 
-      objectReference: {fileID: 12800000, guid: 16fcf26c747f06547832c18abc8fa18d,
-        type: 3}
-    - target: {fileID: 114020840237212108, guid: 93c6f5a4ed19d7c4197f1833d3ec952e,
-        type: 2}
-      propertyPath: m_FontData.m_FontSize
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 224468734204317538, guid: 93c6f5a4ed19d7c4197f1833d3ec952e,
-        type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -20
-      objectReference: {fileID: 0}
-    - target: {fileID: 224468734204317538, guid: 93c6f5a4ed19d7c4197f1833d3ec952e,
-        type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 93c6f5a4ed19d7c4197f1833d3ec952e, type: 2}

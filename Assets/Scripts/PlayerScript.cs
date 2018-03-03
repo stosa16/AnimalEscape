@@ -1,5 +1,4 @@
 ﻿using Assets.Scripts;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -11,7 +10,6 @@ public class PlayerScript : CharacterScript {
     public GameObject levelSuccess;
     private Animator _animator;
     private int _oldAnimatorDirection;
-
 
     // Use this for initialization
     void Start()
@@ -95,7 +93,18 @@ public class PlayerScript : CharacterScript {
         {
             Debug.Log("Dog is collliding with Alarm system");
         }
+
+        _isColliding = true;
+
     }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        _isColliding = false;
+
+    }
+
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -132,4 +141,6 @@ public class PlayerScript : CharacterScript {
     {
         inputEnabled = true;
     }
+
+    
 }
