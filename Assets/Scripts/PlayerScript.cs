@@ -1,6 +1,8 @@
 ﻿using Assets.Scripts;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class PlayerScript : CharacterScript {
 
@@ -10,17 +12,33 @@ public class PlayerScript : CharacterScript {
     public GameObject levelSuccess;
     private Animator _animator;
     private int _oldAnimatorDirection;
+    public GameObject PressEnterContainer;
+    private bool _goToNextLvlPossible;
+    public Image goToNextLvlImg;
 
     // Use this for initialization
     void Start()
     {
         _gameIsOver = false;
         _animator = this.GetComponent<Animator>();
+        _goToNextLvlPossible = false;
+        StartCoroutine(FadeImage(true));
     }
 
     // Update is called once per frame
     protected override void Update()
     {
+        
+
+        if (_goToNextLvlPossible)
+        {
+            if (Input.GetKeyDown(KeyCode.Return))
+            {
+                Debug.Log("Go to next level after hit enter.");
+                StartCoroutine(FadeImage(false));
+            }
+        }
+
         if (_gameIsOver)
             return;
         GetInput();
@@ -83,15 +101,18 @@ public class PlayerScript : CharacterScript {
         }
         if (collision.gameObject.tag.Equals("Door"))
         {
-            Debug.Log("It is a catching obstacele");
-            levelSuccess.SetActive(true);
+            Debug.Log("Dog is colliding with Door.");
+            //levelSuccess.SetActive(true);
             //_gameIsOver = true;
-            SceneManager.LoadScene("LevelWithCages");
+            //SceneManager.LoadScene("LevelWithCages");
+            _goToNextLvlPossible = true;
+            PressEnterContainer.SetActive(true);
         }
 
         if (collision.gameObject.tag.Equals("AlarmSystem"))
         {
             Debug.Log("Dog is collliding with Alarm system");
+            _goToNextLvlPossible = false;
         }
 
         _isColliding = true;
@@ -101,7 +122,7 @@ public class PlayerScript : CharacterScript {
     private void OnCollisionExit2D(Collision2D collision)
     {
         _isColliding = false;
-
+        PressEnterContainer.SetActive(false);
     }
 
 
@@ -142,5 +163,30 @@ public class PlayerScript : CharacterScript {
         inputEnabled = true;
     }
 
+    IEnumerator FadeImage(bool fadeAway)
+    {
+        // fade from opaque to transparent
+        if (fadeAway)
+        {
+            // loop over 1 second backwards
+            for (float i = 1; i >= 0; i -= Time.deltaTime)
+            {
+                // set color with i as alpha
+                goToNextLvlImg.color = new Color(0, 0, 0, i);
+                yield return null;
+            }
+        }
+        // fade from transparent to opaque
+        else
+        {
+            // loop over 1 second
+            for (float i = 0; i <= 1; i += Time.deltaTime)
+            {
+                // set color with i as alpha
+                goToNextLvlImg.color = new Color(0, 0, 0, i);
+                yield return null;
+            }
+        }
+    }
     
 }
