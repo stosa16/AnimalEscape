@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4292456679387250}
   - component: {fileID: 114825325097391588}
   - component: {fileID: 61069437136821508}
+  - component: {fileID: 114198829890623468}
   m_Layer: 0
   m_Name: AlarmSystem
   m_TagString: Untagged
@@ -128,7 +129,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1101623817488788}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2, y: 4.7, z: 0}
+  m_LocalPosition: {x: -5.873, y: -3.85, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4535887257609724}
@@ -216,6 +217,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.25, y: 0.4}
   m_EdgeRadius: 0.02
+--- !u!114 &114198829890623468
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1101623817488788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01154bf79666b0d4d879885696566755, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sounds:
+  - Name: AlarmSound
+    Clip: {fileID: 8300000, guid: 7712e78e53e30144bbbad7d12d74545d, type: 3}
+    Volume: 0
+    Pitch: 0.8
+    Source: {fileID: 0}
 --- !u!114 &114825325097391588
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -227,13 +245,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 860702dbac777934fa158a9ee7517dc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  alarmActiveLightLeft: {fileID: 1467007887436570}
-  alarmActiveLightRight: {fileID: 1723406831779406}
-  alarmActiveLightMiddle: {fileID: 1724711722601676}
-  alarmActiveLightBackside: {fileID: 1700813273277930}
-  alarmNotActive: {fileID: 1486396288130696}
-  pressEContainer: {fileID: 0}
-  timerText: {fileID: 0}
+  AlarmActiveLightLeft: {fileID: 1467007887436570}
+  AlarmActiveLightRight: {fileID: 1724711722601676}
+  AlarmActiveLightMiddle: {fileID: 1723406831779406}
+  AlarmActiveLightBackside: {fileID: 1700813273277930}
+  AlarmNotActive: {fileID: 1486396288130696}
+  PressEContainer: {fileID: 0}
+  TimerText: {fileID: 0}
 --- !u!212 &212345091396147108
 SpriteRenderer:
   m_ObjectHideFlags: 1

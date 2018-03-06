@@ -23,6 +23,7 @@ public class PlayerScript : CharacterScript {
         _animator = this.GetComponent<Animator>();
         _goToNextLvlPossible = false;
         StartCoroutine(FadeImage(true));
+        FindObjectOfType<AudioManager>().Play("GeneralGameSound");
     }
 
     // Update is called once per frame
