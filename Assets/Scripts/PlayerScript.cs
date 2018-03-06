@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -15,7 +16,11 @@ public class PlayerScript : CharacterScript {
     void Start()
     {
         _gameIsOver = false;
-        _animator = this.GetComponent<Animator>();
+        _animator = GetComponent<Animator>();
+
+        PreviousPositions = new List<DogState>();
+        MaxNumberOfStoredPositions = 0;
+
         FindObjectOfType<AudioManager>().Play("GeneralGameSound");
     }
 
