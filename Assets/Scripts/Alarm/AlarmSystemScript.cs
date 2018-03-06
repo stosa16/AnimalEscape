@@ -16,6 +16,11 @@ namespace Assets.Scripts.Alarm
         public Text TimerText;
 
 
+        private void Awake()
+        {
+            FindObjectOfType<AudioManager>().Play("AlarmSound");
+        }
+
         // Use this for initialization
         void Start () {
             _deactivationIsPossible = false;
@@ -36,6 +41,7 @@ namespace Assets.Scripts.Alarm
                     AlarmActiveLightBackside.SetActive(false);
                     AlarmNotActive.SetActive(true);
                     TimerText.SendMessage("AlarmDeactivated");
+                    FindObjectOfType<AudioManager>().Stop("AlarmSound");
                 }
             }
         }
@@ -93,6 +99,7 @@ namespace Assets.Scripts.Alarm
             {
                 _deactivationIsPossible = false;
                 PressEContainer.SetActive(false);
+
             }
         }
     }

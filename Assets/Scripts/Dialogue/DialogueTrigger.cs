@@ -9,6 +9,7 @@ public class DialogueTrigger : MonoBehaviour {
 
     public void TriggerDialogue()
     {
+        Debug.Log("DIalogue triggered");
         FindObjectOfType<DialogueManager>().StartDialogue(dialogue, dogPlayer);
     }
 }

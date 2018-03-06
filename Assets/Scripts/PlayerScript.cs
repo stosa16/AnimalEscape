@@ -11,6 +11,11 @@ public class PlayerScript : CharacterScript {
     private Animator _animator;
     private int _oldAnimatorDirection;
 
+    private void Awake()
+    {
+        FindObjectOfType<AudioManager>().Play("GeneralGameSound");
+    }
+
     // Use this for initialization
     void Start()
     {
