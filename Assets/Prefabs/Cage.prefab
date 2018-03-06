@@ -164,12 +164,12 @@ MonoBehaviour:
   - Name: HitCage
     Clip: {fileID: 8300000, guid: 8bce917494fea0f4eb2268fcf4d1d6ec, type: 3}
     Volume: 0.224
-    Pitch: 0.1
+    Pitch: 1
     Source: {fileID: 0}
   - Name: Barking
     Clip: {fileID: 8300000, guid: ce7412a8fdf417e439d4b839b3401b15, type: 3}
     Volume: 0.224
-    Pitch: 0.1
+    Pitch: 1
     Source: {fileID: 0}
 --- !u!114 &114438477730607346
 MonoBehaviour:
@@ -196,7 +196,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsFree: 0
-  speed: 1.5
+  Speed: 0
   DogPosition: 0
   FollowingDistance: 30
 --- !u!212 &212275183458915754
