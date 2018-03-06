@@ -16,6 +16,9 @@ namespace Assets.Scripts
         [Range(.1f, 3f)]
         public float Pitch;
 
+        [Range(.0f, 1.0f)]
+        public float Volume;
+
         [HideInInspector]
         public AudioSource Source;
 
