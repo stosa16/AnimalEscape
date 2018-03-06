@@ -256,6 +256,7 @@ MonoBehaviour:
   xMovement: -1
   yMovement: 0
   distance: 3
+  isAnimatedGuard: 1
   initialDirection: 2
   _animator: {fileID: 0}
 --- !u!212 &212824495009283408

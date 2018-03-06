@@ -6,6 +6,7 @@ public class GuardScript : MonoBehaviour {
     public float xMovement;
     public float yMovement;
     public float distance;
+    public bool isAnimatedGuard;
     public int initialDirection;
     private Vector2 originPosition;
     private Vector2 previousPosition;
@@ -15,8 +16,11 @@ public class GuardScript : MonoBehaviour {
     void Start()
     {
         originPosition = gameObject.transform.position;
-        _animator = this.GetComponent<Animator>();
-        _animator.SetInteger("Direction", initialDirection);
+        if (isAnimatedGuard)
+        {
+            _animator = this.GetComponent<Animator>();
+            _animator.SetInteger("Direction", initialDirection);
+        }        
     }
 
     // Update is called once per frame
@@ -24,7 +28,11 @@ public class GuardScript : MonoBehaviour {
     {
         previousPosition = gameObject.transform.position;
         gameObject.transform.position = new Vector2(gameObject.transform.position.x + (xMovement * Time.deltaTime), gameObject.transform.position.y + (yMovement * Time.deltaTime));
-        AnimateGuard();
+        if (isAnimatedGuard)
+        {
+            AnimateGuard();
+        }
+
         if (gameObject.transform.position.y <= originPosition.y - distance)
         {
             yMovement *= -1;
