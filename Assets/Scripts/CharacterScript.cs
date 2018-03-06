@@ -1,9 +1,8 @@
-﻿using System;
-using Boo.Lang;
+﻿using Assets.Scripts;
 using UnityEngine;
+using System.Collections.Generic;
 
-public abstract class CharacterScript : MonoBehaviour
-{
+public abstract class CharacterScript : MonoBehaviour {
 
     [SerializeField]
     protected float speed;
@@ -15,7 +14,7 @@ public abstract class CharacterScript : MonoBehaviour
     protected Vector2 direction;
 
     [SerializeField]
-    public System.Collections.Generic.List<Vector2> PreviousPositions;
+    public List<DogState> PreviousPositions;
 
 
     public int MaxNumberOfStoredPositions;
@@ -24,8 +23,7 @@ public abstract class CharacterScript : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        PreviousPositions = new System.Collections.Generic.List<Vector2>();
-        MaxNumberOfStoredPositions = 0;
+        
     }
 
     // Update is called once per frame
@@ -42,13 +40,22 @@ public abstract class CharacterScript : MonoBehaviour
 
         if (PreviousPositions.Count < MaxNumberOfStoredPositions)
         {
-            PreviousPositions.Add(mainDogCurrentPosition);
+            PreviousPositions.Add(new DogState
+            {
+                Position = mainDogCurrentPosition,
+                Direction = direction
+            });
+
             return;
         }
 
-        if (!_isColliding && MaxNumberOfStoredPositions > 3 && mainDogCurrentPosition != PreviousPositions[MaxNumberOfStoredPositions-1])
+        if (!_isColliding && MaxNumberOfStoredPositions > 3 && mainDogCurrentPosition != PreviousPositions[MaxNumberOfStoredPositions - 1].Position)
         {
-            PreviousPositions.Add(mainDogCurrentPosition);
+            PreviousPositions.Add(new DogState
+            {
+                Position = mainDogCurrentPosition,
+                Direction = direction
+            });
             if (PreviousPositions.Count > MaxNumberOfStoredPositions)
                 PreviousPositions.RemoveAt(0);
         }

@@ -44,8 +44,10 @@ namespace Assets.Scripts {
             {
                 if (IsFree)
                 {
-                    var nextPosition = _character.PreviousPositions[_character.MaxNumberOfStoredPositions - DogPosition];
-                    transform.position = new Vector2(nextPosition.x, nextPosition.y); 
+                    var nextState = _character.PreviousPositions[_character.MaxNumberOfStoredPositions - DogPosition];
+                    transform.position = new Vector2(nextState.Position.x, nextState.Position.y); 
+
+                    // FOR SANDRA:  nextState.Direction should be the thing you can use :)
                 }
             }
             catch (Exception)

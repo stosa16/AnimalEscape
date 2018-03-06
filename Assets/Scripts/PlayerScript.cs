@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -20,10 +21,14 @@ public class PlayerScript : CharacterScript {
     void Start()
     {
         _gameIsOver = false;
-        _animator = this.GetComponent<Animator>();
+        _animator = GetComponent<Animator>();
+
+        PreviousPositions = new List<DogState>();
         _goToNextLvlPossible = false;
         StartCoroutine(FadeImage(true));
+        MaxNumberOfStoredPositions = 0;
         gameObject.GetComponent<AudioManager>().Play("GeneralGameSound");
+
     }
 
     // Update is called once per frame
