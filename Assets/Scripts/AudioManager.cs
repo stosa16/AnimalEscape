@@ -12,7 +12,7 @@ namespace Assets.Scripts
             {
                 sound.Source = gameObject.AddComponent<AudioSource>();
                 sound.Source.clip = sound.Clip;
-               // sound.Source.volume = sound.Volume;
+                sound.Source.priority = sound.Priority;
                 sound.Source.pitch = sound.Pitch;
             }
         }

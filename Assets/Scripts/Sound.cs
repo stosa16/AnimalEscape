@@ -10,8 +10,8 @@ namespace Assets.Scripts
 
         public AudioClip Clip;
 
-        [Range(0f, 1f)]
-        public float Volume;
+        [Range(0, 256)]
+        public int Priority;
 
         [Range(.1f, 3f)]
         public float Pitch;

@@ -137,7 +137,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 25447236}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.15, y: 3.83, z: 0.076171875}
+  m_LocalPosition: {x: -2.74, y: -4.01, z: 0.076171875}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3836,7 +3836,8 @@ Prefab:
       propertyPath: TimerText
       value: 
       objectReference: {fileID: 389298817}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114198829890623468, guid: e8c1dc91e351193429029827fc560aea, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: e8c1dc91e351193429029827fc560aea, type: 2}
   m_IsPrefabParent: 0
 --- !u!114 &389298817 stripped
@@ -4539,7 +4540,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1996236589}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.29, y: 3.88, z: -0.072265625}
+  m_LocalPosition: {x: -4.21, y: -4.19, z: -0.072265625}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2021297830}
@@ -4946,7 +4947,6 @@ GameObject:
   - component: {fileID: 1035449427}
   - component: {fileID: 1035449426}
   - component: {fileID: 1035449429}
-  - component: {fileID: 1035449430}
   m_Layer: 0
   m_Name: Walls
   m_TagString: Untagged
@@ -5772,17 +5772,6 @@ TilemapCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
---- !u!114 &1035449430
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1035449424}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 192147fcfd3d0d64397620e09cd056bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1085990516
 Prefab:
   m_ObjectHideFlags: 0
@@ -6074,11 +6063,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4731558500057780, guid: 4db57bc55a85f05449f35b4bf5e52b2a, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 1.7
+      value: -1.3
       objectReference: {fileID: 0}
     - target: {fileID: 4731558500057780, guid: 4db57bc55a85f05449f35b4bf5e52b2a, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 2.49
+      value: -4.31
       objectReference: {fileID: 0}
     - target: {fileID: 4731558500057780, guid: 4db57bc55a85f05449f35b4bf5e52b2a, type: 2}
       propertyPath: m_LocalPosition.z
@@ -6103,6 +6092,16 @@ Prefab:
     - target: {fileID: 4731558500057780, guid: 4db57bc55a85f05449f35b4bf5e52b2a, type: 2}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114120870249727024, guid: 4db57bc55a85f05449f35b4bf5e52b2a,
+        type: 2}
+      propertyPath: Sounds.Array.data[0].Priority
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 114120870249727024, guid: 4db57bc55a85f05449f35b4bf5e52b2a,
+        type: 2}
+      propertyPath: Sounds.Array.data[1].Priority
+      value: 220
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4db57bc55a85f05449f35b4bf5e52b2a, type: 2}
@@ -6743,7 +6742,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1853258300
 Transform:
   m_ObjectHideFlags: 0
@@ -6869,7 +6868,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1913006039}
-  - component: {fileID: 1913006038}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -6877,17 +6875,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1913006038
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1913006037}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdfa52f775b12504889731affcb7c445, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1913006039
 Transform:
   m_ObjectHideFlags: 0
@@ -7073,7 +7060,6 @@ GameObject:
   - component: {fileID: 1996236595}
   - component: {fileID: 1996236590}
   - component: {fileID: 1996236596}
-  - component: {fileID: 1996236597}
   m_Layer: 0
   m_Name: Dog
   m_TagString: Spieler
@@ -7229,20 +7215,7 @@ Animator:
 --- !u!114 &1996236596
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114587539494255918, guid: 38d5c915be042784ca955fb263329e6e,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1996236589}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce199dea4a41b604dbf9ed293a040bf7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1996236597
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114233598480998330, guid: 38d5c915be042784ca955fb263329e6e,
-    type: 2}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1996236589}
   m_Enabled: 1
@@ -7253,8 +7226,30 @@ MonoBehaviour:
   Sounds:
   - Name: GeneralGameSound
     Clip: {fileID: 8300000, guid: fb0297014050068458fc6567b1f0059a, type: 3}
-    Volume: 0
+    Priority: 200
     Pitch: 1
+    Source: {fileID: 0}
+--- !u!1 &1997402469 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1101623817488788, guid: e8c1dc91e351193429029827fc560aea,
+    type: 2}
+  m_PrefabInternal: {fileID: 295846394}
+--- !u!114 &1997402470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1997402469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01154bf79666b0d4d879885696566755, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sounds:
+  - Name: AlarmSound
+    Clip: {fileID: 8300000, guid: 7712e78e53e30144bbbad7d12d74545d, type: 3}
+    Priority: 100
+    Pitch: 0.8
     Source: {fileID: 0}
 --- !u!1001 &1997796244
 Prefab:

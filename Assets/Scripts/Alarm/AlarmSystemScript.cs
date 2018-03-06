@@ -15,16 +15,12 @@ namespace Assets.Scripts.Alarm
 
         public Text TimerText;
 
-
-        private void Awake()
-        {
-            FindObjectOfType<AudioManager>().Play("AlarmSound");
-        }
-
         // Use this for initialization
         void Start () {
             _deactivationIsPossible = false;
             InvokeRepeating("UpdateAlarmSystem", 1.0f, 1.0f);
+
+            FindObjectOfType<AudioManager>().Play("AlarmSound");
         }
 
         private void Update()

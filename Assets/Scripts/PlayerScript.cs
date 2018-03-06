@@ -11,16 +11,12 @@ public class PlayerScript : CharacterScript {
     private Animator _animator;
     private int _oldAnimatorDirection;
 
-    private void Awake()
-    {
-        FindObjectOfType<AudioManager>().Play("GeneralGameSound");
-    }
-
     // Use this for initialization
     void Start()
     {
         _gameIsOver = false;
         _animator = this.GetComponent<Animator>();
+        FindObjectOfType<AudioManager>().Play("GeneralGameSound");
     }
 
     // Update is called once per frame
