@@ -1,24 +1,26 @@
 ﻿using System;
 using UnityEngine;
 
-
 namespace Assets.Scripts {
     public class OtherDogFolowingMainDogScript : MonoBehaviour {
         public bool IsFree;
-        private GameObject mainDog;
+        private GameObject _mainDog;
         [SerializeField]
-        protected float speed;
+        protected float Speed;
         
         public int DogPosition;
 
-        private CharacterScript character;
+        private CharacterScript _character;
+
+        public int FollowingDistance;
 
         void Start()
         {
             IsFree = false;
-            mainDog = GameObject.FindGameObjectWithTag("Spieler");
-            speed = 1.5f;
-            character = mainDog.GetComponent<CharacterScript>();
+            _mainDog = GameObject.FindGameObjectWithTag("Spieler");
+            Speed = 1.5f;
+            _character = _mainDog.GetComponent<CharacterScript>();
+            FollowingDistance = 30;
         }
 
         public void MakeItSimulated()
@@ -29,25 +31,28 @@ namespace Assets.Scripts {
 
         internal void StartFollowingMainDog()
         {
-            IsFree = true;
+            _character.MaxNumberOfStoredPositions += FollowingDistance;
+
             DogPosition = DogPositionBuilder.GetNext();
             MakeItSimulated();
-
-            character.limitOfPreviousDirections += 30;
+            IsFree = true;
         }
 
         void Update()
         {
-            if (IsFree)
+            try
             {
-                var mainDogPosition = mainDog.transform.position;
-                //transform.position = Vector2.MoveTowards(transform.position, mainDogPosition, speed * Time.deltaTime);
-                transform.position = character.previousDirections[character.limitOfPreviousDirections - DogPosition];
-                //transform.Translate(character.previousDirections[0] * speed * Time.deltaTime);
+                if (IsFree)
+                {
+                    var nextPosition = _character.PreviousPositions[_character.MaxNumberOfStoredPositions - DogPosition];
+                    transform.position = new Vector2(nextPosition.x, nextPosition.y); 
+                }
+            }
+            catch (Exception)
+            {
+                //doNothing
             }
         }
-
-
 
         private void OnCollisionEnter2D(Collision2D collision)
         {
@@ -55,11 +60,10 @@ namespace Assets.Scripts {
             {
                 gameObject.GetComponent<Rigidbody2D>().isKinematic = true;
                 Debug.Log("It is a catching obstacele");
-                var playerScript = mainDog.GetComponent<PlayerScript>();
+                var playerScript = _mainDog.GetComponent<PlayerScript>();
                 playerScript.gameOver.SetActive(true);
                 playerScript._gameIsOver = true;
             }
         }
-
     }
 }

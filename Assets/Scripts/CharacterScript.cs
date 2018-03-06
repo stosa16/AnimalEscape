@@ -1,24 +1,31 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using Boo.Lang;
 using UnityEngine;
 
-public abstract class CharacterScript : MonoBehaviour {
+public abstract class CharacterScript : MonoBehaviour
+{
 
     [SerializeField]
     protected float speed;
 
+    [SerializeField]
+    protected bool _isColliding;
+
+
     protected Vector2 direction;
 
     [SerializeField]
-    public List<Vector2> previousDirections;
+    public System.Collections.Generic.List<Vector2> PreviousPositions;
 
-    public int limitOfPreviousDirections;
+
+    public int MaxNumberOfStoredPositions;
 
 
     // Use this for initialization
     void Start()
     {
-        previousDirections = new List<Vector2>();
-        limitOfPreviousDirections = 0;
+        PreviousPositions = new System.Collections.Generic.List<Vector2>();
+        MaxNumberOfStoredPositions = 0;
     }
 
     // Update is called once per frame
@@ -29,21 +36,21 @@ public abstract class CharacterScript : MonoBehaviour {
 
     public void Move()
     {
-        transform.Translate(direction * speed * Time.deltaTime);
+        GetComponent<Rigidbody2D>().MovePosition(new Vector2(transform.position.x + direction.x * speed * Time.deltaTime, transform.position.y + direction.y * speed * Time.deltaTime));
 
         Vector2 mainDogCurrentPosition = GameObject.FindGameObjectWithTag("Spieler").transform.position;
 
-        if (previousDirections.Count < limitOfPreviousDirections)
+        if (PreviousPositions.Count < MaxNumberOfStoredPositions)
         {
-            previousDirections.Add(mainDogCurrentPosition);
+            PreviousPositions.Add(mainDogCurrentPosition);
             return;
         }
 
-        if (mainDogCurrentPosition != previousDirections[limitOfPreviousDirections - 2])
+        if (!_isColliding && MaxNumberOfStoredPositions > 3 && mainDogCurrentPosition != PreviousPositions[MaxNumberOfStoredPositions-1])
         {
-            previousDirections.Add(mainDogCurrentPosition);
-            if (previousDirections.Count > limitOfPreviousDirections)
-                previousDirections.RemoveAt(0);
+            PreviousPositions.Add(mainDogCurrentPosition);
+            if (PreviousPositions.Count > MaxNumberOfStoredPositions)
+                PreviousPositions.RemoveAt(0);
         }
     }
 }

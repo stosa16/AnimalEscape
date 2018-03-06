@@ -1,98 +1,99 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class AlarmSystemScript : MonoBehaviour {
+namespace Assets.Scripts.Alarm
+{
+    public class AlarmSystemScript : MonoBehaviour {
 
-    public GameObject alarmActiveLightLeft;
-    public GameObject alarmActiveLightRight;
-    public GameObject alarmActiveLightMiddle;
-    public GameObject alarmActiveLightBackside;
-    public GameObject alarmNotActive;
-    public GameObject pressEContainer;
-    private bool deactivationIsPossible;
+        public GameObject AlarmActiveLightLeft;
+        public GameObject AlarmActiveLightRight;
+        public GameObject AlarmActiveLightMiddle;
+        public GameObject AlarmActiveLightBackside;
+        public GameObject AlarmNotActive;
+        public GameObject PressEContainer;
+        private bool _deactivationIsPossible;
 
-    public Text timerText;
+        public Text TimerText;
 
 
-    // Use this for initialization
-    void Start () {
-        deactivationIsPossible = false;
-        InvokeRepeating("UpdateAlarmSystem", 1.0f, 1.0f);
-	}
+        // Use this for initialization
+        void Start () {
+            _deactivationIsPossible = false;
+            InvokeRepeating("UpdateAlarmSystem", 1.0f, 1.0f);
+        }
 
-    private void Update()
-    {
-        if(deactivationIsPossible)
+        private void Update()
         {
-            if(Input.GetKeyDown(KeyCode.E))
+            if(_deactivationIsPossible)
             {
-                Debug.Log("User deactivates Alarm system!");
-                CancelInvoke("UpdateAlarmSystem");
-                alarmActiveLightLeft.SetActive(false);
-                alarmActiveLightRight.SetActive(false);
-                alarmActiveLightMiddle.SetActive(false);
-                alarmActiveLightBackside.SetActive(false);
-                alarmNotActive.SetActive(true);
-                timerText.SendMessage("AlarmDeactivated");
+                if(Input.GetKeyDown(KeyCode.E))
+                {
+                    Debug.Log("User deactivates Alarm system!");
+                    CancelInvoke("UpdateAlarmSystem");
+                    AlarmActiveLightLeft.SetActive(false);
+                    AlarmActiveLightRight.SetActive(false);
+                    AlarmActiveLightMiddle.SetActive(false);
+                    AlarmActiveLightBackside.SetActive(false);
+                    AlarmNotActive.SetActive(true);
+                    TimerText.SendMessage("AlarmDeactivated");
+                }
             }
         }
-    }
 
-    void UpdateAlarmSystem()
-    {
-        if(alarmActiveLightLeft.activeSelf)
+        void UpdateAlarmSystem()
         {
-            alarmActiveLightMiddle.SetActive(true);
-            alarmActiveLightLeft.SetActive(false);
-            return;
+            if(AlarmActiveLightLeft.activeSelf)
+            {
+                AlarmActiveLightMiddle.SetActive(true);
+                AlarmActiveLightLeft.SetActive(false);
+                return;
+            }
+
+            if (AlarmActiveLightMiddle.activeSelf)
+            {
+                AlarmActiveLightRight.SetActive(true);
+                AlarmActiveLightMiddle.SetActive(false);
+                return;
+            }
+
+            if (AlarmActiveLightRight.activeSelf)
+            {
+                AlarmActiveLightBackside.SetActive(true);
+                AlarmActiveLightRight.SetActive(false);
+                return;
+            }
+
+            if (AlarmActiveLightBackside.activeSelf)
+            {
+                AlarmActiveLightLeft.SetActive(true);
+                AlarmActiveLightBackside.SetActive(false);
+                return;
+            }
         }
 
-        if (alarmActiveLightMiddle.activeSelf)
+        private void OnCollisionEnter2D(Collision2D collision)
         {
-            alarmActiveLightRight.SetActive(true);
-            alarmActiveLightMiddle.SetActive(false);
-            return;
+            Debug.Log("Alarm System Script - Alarm collides with " + collision.transform.tag);
+            if(AlarmNotActive.activeSelf)
+            {
+                return;
+            }
+            if(collision.transform.tag.Equals("Spieler"))
+            {
+                _deactivationIsPossible = true;
+                PressEContainer.SetActive(true);
+            }
         }
 
-        if (alarmActiveLightRight.activeSelf)
+        private void OnCollisionExit2D(Collision2D collision)
         {
-            alarmActiveLightBackside.SetActive(true);
-            alarmActiveLightRight.SetActive(false);
-            return;
-        }
+            Debug.Log("Alarm System Script - ALarm is collision exit");
 
-        if (alarmActiveLightBackside.activeSelf)
-        {
-            alarmActiveLightLeft.SetActive(true);
-            alarmActiveLightBackside.SetActive(false);
-            return;
-        }
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        Debug.Log("Alarm System Script - Alarm collides with " + collision.transform.tag);
-        if(alarmNotActive.activeSelf)
-        {
-            return;
-        }
-        if(collision.transform.tag.Equals("Spieler"))
-        {
-            deactivationIsPossible = true;
-            pressEContainer.SetActive(true);
-        }
-    }
-
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        Debug.Log("Alarm System Script - ALarm is collision exit");
-
-        if (collision.transform.tag.Equals("Spieler"))
-        {
-            deactivationIsPossible = false;
-            pressEContainer.SetActive(false);
+            if (collision.transform.tag.Equals("Spieler"))
+            {
+                _deactivationIsPossible = false;
+                PressEContainer.SetActive(false);
+            }
         }
     }
 }
