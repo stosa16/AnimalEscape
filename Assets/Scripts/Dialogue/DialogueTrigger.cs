@@ -6,10 +6,13 @@ public class DialogueTrigger : MonoBehaviour {
 
     public GameObject dogPlayer;
     public Dialogue dialogue;
+    public GameObject dialogueManager;
+    public bool doSendPlayerNotifications;
 
     public void TriggerDialogue()
     {
         Debug.Log("DIalogue triggered");
-        FindObjectOfType<DialogueManager>().StartDialogue(dialogue, dogPlayer);
+        dialogueManager.GetComponent<DialogueManager>().StartDialogue(dialogue, dogPlayer, doSendPlayerNotifications);
+        //FindObjectOfType<DialogueManager>().StartDialogue(dialogue, dogPlayer);
     }
 }

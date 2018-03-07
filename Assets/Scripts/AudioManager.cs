@@ -14,6 +14,7 @@ namespace Assets.Scripts
                 sound.Source.clip = sound.Clip;
                 sound.Source.priority = sound.Priority;
                 sound.Source.pitch = sound.Pitch;
+                sound.Source.volume = sound.Volume;
             }
         }
 

@@ -19,8 +19,8 @@ namespace Assets.Scripts.Alarm
         void Start () {
             _deactivationIsPossible = false;
             InvokeRepeating("UpdateAlarmSystem", 1.0f, 1.0f);
-
-            FindObjectOfType<AudioManager>().Play("AlarmSound");
+            
+            gameObject.GetComponent<AudioManager>().Play("AlarmSound");
         }
 
         private void Update()

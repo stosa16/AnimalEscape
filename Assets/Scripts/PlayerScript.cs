@@ -27,8 +27,8 @@ public class PlayerScript : CharacterScript {
         _goToNextLvlPossible = false;
         StartCoroutine(FadeImage(true));
         MaxNumberOfStoredPositions = 0;
+        gameObject.GetComponent<AudioManager>().Play("GeneralGameSound");
 
-        FindObjectOfType<AudioManager>().Play("GeneralGameSound");
     }
 
     // Update is called once per frame
