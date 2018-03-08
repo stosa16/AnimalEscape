@@ -50,7 +50,7 @@ public abstract class CharacterScript : MonoBehaviour {
             return;
         }
 
-        if (!_isColliding && MaxNumberOfStoredPositions > 3 && mainDogCurrentPosition != PreviousPositions[MaxNumberOfStoredPositions - 1].Position)
+        if (MaxNumberOfStoredPositions > 3 && mainDogCurrentPosition != PreviousPositions[MaxNumberOfStoredPositions - 1].Position)
         {
             PreviousPositions.Add(new DogState
             {
