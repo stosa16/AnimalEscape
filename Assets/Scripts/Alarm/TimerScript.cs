@@ -69,6 +69,13 @@ public class TimerScript : MonoBehaviour {
         alarmImage.enabled = false;
     }
 
+    public void AlarmActivated()
+    {
+        alarmImage.enabled = true;
+        InvokeRepeating("UpdateTimer", 1.0f, 1.0f);
+        InvokeRepeating("UpdateAlarmImage", 1.5f, 1.5f);
+    }
+
 }
 
 

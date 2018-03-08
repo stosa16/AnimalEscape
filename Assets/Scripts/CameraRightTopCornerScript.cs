@@ -77,4 +77,14 @@ public class CameraRightTopCornerScript : MonoBehaviour {
             return;
         }
     }
+
+    public void StopCameraRotation()
+    {
+        CancelInvoke("RotateCamera");
+    }
+
+    public void StartCameraRotation()
+    {
+        InvokeRepeating("RotateCamera", rotation_speed * Time.deltaTime, rotation_speed * Time.deltaTime);
+    }
 }

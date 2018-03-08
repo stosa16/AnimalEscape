@@ -146,6 +146,9 @@ public class PlayerScript : CharacterScript {
     }
 
     public void SetGameOver(){
+        HelperFunctions.StopAllGuards();
+        HelperFunctions.StopAllCameras();
+        HelperFunctions.StopAlarmSystem();
         gameOver.SetActive(true);
         _gameIsOver = true;
 

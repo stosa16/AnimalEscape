@@ -11,11 +11,13 @@ public class GuardScript : MonoBehaviour {
     private Vector2 originPosition;
     private Vector2 previousPosition;
     public Animator _animator;
+    private bool _guardMoving;
 
     // Use this for initialization
     void Start()
     {
         originPosition = gameObject.transform.position;
+        _guardMoving = true;
         if (isAnimatedGuard)
         {
             _animator = this.GetComponent<Animator>();
@@ -26,6 +28,8 @@ public class GuardScript : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+        if (!_guardMoving)
+            return;
         previousPosition = gameObject.transform.position;
         gameObject.transform.position = new Vector2(gameObject.transform.position.x + (xMovement * Time.deltaTime), gameObject.transform.position.y + (yMovement * Time.deltaTime));
         if (isAnimatedGuard)
@@ -98,6 +102,11 @@ public class GuardScript : MonoBehaviour {
         {
             collision.gameObject.GetComponent<OtherDogScript>().ChangeDirectionFromGuard();
         }
+    }
+
+    public void SetGuardMovement(bool shouldMove)
+    {
+        _guardMoving = shouldMove;
     }
 
 }
