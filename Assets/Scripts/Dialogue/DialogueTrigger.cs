@@ -12,7 +12,7 @@ public class DialogueTrigger : MonoBehaviour {
     public void TriggerDialogue()
     {
         Debug.Log("DIalogue triggered");
-        dialogueManager.GetComponent<DialogueManager>().StartDialogue(dialogue, dogPlayer, doSendPlayerNotifications);
-        //FindObjectOfType<DialogueManager>().StartDialogue(dialogue, dogPlayer);
+        //dialogueManager.GetComponent<DialogueManager>().StartDialogue(dialogue, dogPlayer, doSendPlayerNotifications);
+        FindObjectOfType<DialogueManager>().StartDialogue(dialogue, dogPlayer, doSendPlayerNotifications);
     }
 }

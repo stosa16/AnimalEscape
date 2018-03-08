@@ -8,7 +8,7 @@ public class DialogueManager : MonoBehaviour {
     public Text nameText;
     public Text dialogueText;
     public GameObject _dogPlayer;
-    public bool doSendNotificationsToPlayer;
+    private bool doSendNotificationsToPlayer;
 
     public Animator animator;
             
@@ -21,6 +21,12 @@ public class DialogueManager : MonoBehaviour {
 
     public void StartDialogue(Dialogue dialogue, GameObject dogPlayer, bool doSendPlayerNotifications)
     {
+
+        if(animator.GetBool("IsOpen") == true)
+        {
+            return;
+        }
+
         animator.SetBool("isOpen", true);
 
         _dogPlayer = dogPlayer;
