@@ -254,6 +254,9 @@ MonoBehaviour:
   xMovement: 0
   yMovement: 0
   distance: 0
+  isAnimatedGuard: 0
+  initialDirection: 0
+  _animator: {fileID: 0}
 --- !u!212 &212161089128936018
 SpriteRenderer:
   m_ObjectHideFlags: 1
