@@ -34,7 +34,7 @@ public class PlayerScript : CharacterScript {
     // Update is called once per frame
     protected override void Update()
     {
-        
+
 
         if (_goToNextLvlPossible)
         {
@@ -67,24 +67,30 @@ public class PlayerScript : CharacterScript {
         {
             animatorDirection = Constants.DirectionUp;
             direction += Vector2.up;
+            _isMoving = true;
         }
         else if (Input.GetKey(KeyCode.DownArrow))
         {
             animatorDirection = Constants.DirectionDown;
             direction += Vector2.down;
+            _isMoving = true;
         }
         else if (Input.GetKey(KeyCode.LeftArrow))
         {
             animatorDirection = Constants.DirectionLeft;
             direction += Vector2.left;
+            _isMoving = true;
         }
         else if (Input.GetKey(KeyCode.RightArrow))
         {
             animatorDirection = Constants.DirectionRight;
             direction += Vector2.right;
-        } else
+            _isMoving = true;
+        }
+        else
         {
             animatorDirection = _oldAnimatorDirection * 10;
+            _isMoving = false;
         }
 
         _oldAnimatorDirection = animatorDirection;
@@ -122,11 +128,11 @@ public class PlayerScript : CharacterScript {
         }
 
         _isColliding = true;
-
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
+        Debug.Log("Player Script - Collision EXIT");
         _isColliding = false;
         PressEnterContainer.SetActive(false);
     }
@@ -145,7 +151,8 @@ public class PlayerScript : CharacterScript {
         }
     }
 
-    public void SetGameOver(){
+    public void SetGameOver()
+    {
         gameOver.SetActive(true);
         _gameIsOver = true;
 
@@ -154,7 +161,7 @@ public class PlayerScript : CharacterScript {
         foreach (var dog in otherDogs)
         {
             var script = dog.GetComponent<OtherDogFolowingMainDogScript>();
-            if(script != null)
+            if (script != null)
                 script.IsFree = false;
         }
     }
@@ -194,5 +201,5 @@ public class PlayerScript : CharacterScript {
             }
         }
     }
-    
+
 }
