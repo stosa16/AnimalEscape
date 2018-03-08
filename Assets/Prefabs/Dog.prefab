@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 50690366489392166}
   - component: {fileID: 95714802809541534}
   - component: {fileID: 114254215087123608}
-  - component: {fileID: 114233598480998330}
+  - component: {fileID: 114728558889776992}
   m_Layer: 0
   m_Name: Dog
   m_TagString: Spieler
@@ -193,7 +193,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1127945380604230}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.29, y: 3.88, z: -0.072265625}
+  m_LocalPosition: {x: -0.07, y: -4.79, z: -0.072265625}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4420820965745852}
@@ -281,7 +281,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.6, y: 0.48}
+  m_Size: {x: 0.25, y: 0.48}
   m_EdgeRadius: 0
 --- !u!65 &65377828420129274
 BoxCollider:
@@ -331,23 +331,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114233598480998330
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1127945380604230}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01154bf79666b0d4d879885696566755, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Sounds:
-  - Name: GeneralGameSound
-    Clip: {fileID: 8300000, guid: fb0297014050068458fc6567b1f0059a, type: 3}
-    Volume: 0
-    Pitch: 1
-    Source: {fileID: 0}
 --- !u!114 &114254215087123608
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -375,12 +358,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1.5
   _isColliding: 0
-  PreviousPositions: []
   MaxNumberOfStoredPositions: 0
   inputEnabled: 1
   _gameIsOver: 0
   gameOver: {fileID: 1290267596332256}
   levelSuccess: {fileID: 1423835749832780}
+  PressEnterContainer: {fileID: 0}
+  goToNextLvlImg: {fileID: 0}
 --- !u!114 &114497235481558270
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -392,6 +376,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18ed5a8864d72f9459b246fb5e88f448, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114728558889776992
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1127945380604230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01154bf79666b0d4d879885696566755, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sounds:
+  - Name: GeneralGameSound
+    Clip: {fileID: 8300000, guid: fb0297014050068458fc6567b1f0059a, type: 3}
+    Priority: 200
+    Pitch: 1
+    Volume: 0
+    Source: {fileID: 0}
 --- !u!114 &114942910755855924
 MonoBehaviour:
   m_ObjectHideFlags: 1
