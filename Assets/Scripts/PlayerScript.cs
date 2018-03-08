@@ -17,6 +17,11 @@ public class PlayerScript : CharacterScript {
     private bool _goToNextLvlPossible;
     public Image goToNextLvlImg;
 
+    private static readonly float _wideCollider = 0.58f;
+    private static readonly float _narrowCollider = 0.25f;
+
+    private BoxCollider2D _dogCollider;
+
     // Use this for initialization
     void Start()
     {
@@ -30,13 +35,12 @@ public class PlayerScript : CharacterScript {
         gameObject.GetComponent<AudioManager>().Play("GeneralGameSound");
         StartCoroutine(FadeImage(true));
 
+        _dogCollider = gameObject.GetComponent<BoxCollider2D>();
     }
 
     // Update is called once per frame
     protected override void Update()
     {
-
-
         if (_goToNextLvlPossible)
         {
             if (Input.GetKeyDown(KeyCode.Return))
@@ -69,24 +73,28 @@ public class PlayerScript : CharacterScript {
             animatorDirection = Constants.DirectionUp;
             direction += Vector2.up;
             _isMoving = true;
+            _dogCollider.size = new Vector2(_narrowCollider, _dogCollider.size.y);// = _narrowCollider;
         }
         else if (Input.GetKey(KeyCode.DownArrow))
         {
             animatorDirection = Constants.DirectionDown;
             direction += Vector2.down;
             _isMoving = true;
+            _dogCollider.size = new Vector2(_narrowCollider, _dogCollider.size.y);
         }
         else if (Input.GetKey(KeyCode.LeftArrow))
         {
             animatorDirection = Constants.DirectionLeft;
             direction += Vector2.left;
             _isMoving = true;
+            _dogCollider.size = new Vector2(_wideCollider, _dogCollider.size.y);
         }
         else if (Input.GetKey(KeyCode.RightArrow))
         {
             animatorDirection = Constants.DirectionRight;
             direction += Vector2.right;
             _isMoving = true;
+            _dogCollider.size = new Vector2(_wideCollider, _dogCollider.size.y);
         }
         else
         {
