@@ -37,13 +37,14 @@ public abstract class CharacterScript : MonoBehaviour {
         GetComponent<Rigidbody2D>().MovePosition(new Vector2(transform.position.x + direction.x * speed * Time.deltaTime, transform.position.y + direction.y * speed * Time.deltaTime));
 
         Vector2 mainDogCurrentPosition = GameObject.FindGameObjectWithTag("Spieler").transform.position;
+        int mainDogCurrentDirection = GameObject.FindGameObjectWithTag("Spieler").GetComponent<Animator>().GetInteger("Direction");
 
         if (PreviousPositions.Count < MaxNumberOfStoredPositions)
         {
             PreviousPositions.Add(new DogState
             {
                 Position = mainDogCurrentPosition,
-                Direction = direction
+                Direction = mainDogCurrentDirection
             });
 
             return;
@@ -54,7 +55,7 @@ public abstract class CharacterScript : MonoBehaviour {
             PreviousPositions.Add(new DogState
             {
                 Position = mainDogCurrentPosition,
-                Direction = direction
+                Direction = mainDogCurrentDirection
             });
             if (PreviousPositions.Count > MaxNumberOfStoredPositions)
                 PreviousPositions.RemoveAt(0);

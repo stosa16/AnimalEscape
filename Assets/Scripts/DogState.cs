@@ -5,7 +5,7 @@ namespace Assets.Scripts {
 
         public Vector2 Position;
 
-        public Vector2 Direction;
+        public int Direction;
         
     }
 }
