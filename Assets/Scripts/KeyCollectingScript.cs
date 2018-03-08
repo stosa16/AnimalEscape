@@ -12,6 +12,8 @@ namespace Assets.Scripts
 
         public GameObject KeyStatus;
 
+        public Sprite EmptyCageSprite;
+
         // Use this for initialization
         void Start()
         {
@@ -26,7 +28,10 @@ namespace Assets.Scripts
                 return;
 
             if (Input.GetKey("k"))
-                UnlockTheDog();
+            {
+                _cageApproached.tag = "CageEmpty";
+                UnlockTheDog();                
+            }                
             else
             {
                 PressKText.SetActive(true);
@@ -62,6 +67,7 @@ namespace Assets.Scripts
             FindObjectOfType<AudioManager>().Play("Barking");
 
             var dogFromCage = _cageApproached.transform.GetChild(0).gameObject;
+            _cageApproached.GetComponent<SpriteRenderer>().sprite = EmptyCageSprite;
             var theDogScript = dogFromCage.GetComponent<OtherDogFolowingMainDogScript>();
             theDogScript.StartFollowingMainDog();
 

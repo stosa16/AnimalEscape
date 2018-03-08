@@ -3638,7 +3638,7 @@ Prefab:
     - target: {fileID: 212546136608299172, guid: 38d5c915be042784ca955fb263329e6e,
         type: 2}
       propertyPath: m_SortingOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 50690366489392166, guid: 38d5c915be042784ca955fb263329e6e,
         type: 2}
@@ -4345,6 +4345,12 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 212593836770832994, guid: 3ae4da41955363c4f854d7dd4f41f03a,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300002, guid: 000735a7770b3444dab0aa2dd9de2eb3,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3ae4da41955363c4f854d7dd4f41f03a, type: 2}
   m_IsPrefabParent: 0
@@ -7195,6 +7201,7 @@ MonoBehaviour:
   HasKey: 0
   PressKText: {fileID: 1740389049}
   KeyStatus: {fileID: 1738029077}
+  EmptyCageSprite: {fileID: 21300000, guid: db60582b1a56c594e915216c05118b49, type: 3}
 --- !u!95 &1996236595
 Animator:
   serializedVersion: 3
