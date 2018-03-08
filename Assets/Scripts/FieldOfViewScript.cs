@@ -33,6 +33,7 @@ public class FieldOfViewScript : MonoBehaviour {
             //ps._gameIsOver = true;
             //GameOver.SetActive(true);
             ps.SetGameOver();
+            
         }
     }
 }

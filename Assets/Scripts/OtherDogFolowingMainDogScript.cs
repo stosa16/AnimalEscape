@@ -48,6 +48,8 @@ namespace Assets.Scripts {
             {
                 if (IsFree)
                 {
+                    if (Vector2.Distance(transform.position, _character.transform.position) <= 0.6)
+                        return;
                     var nextState = _character.PreviousPositions[_character.MaxNumberOfStoredPositions - DogPosition];
                     transform.position = new Vector2(nextState.Position.x, nextState.Position.y);
                     if (_oldPosition.x != transform.position.x || _oldPosition.y != transform.position.y)

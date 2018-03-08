@@ -28,6 +28,7 @@ public class PlayerScript : CharacterScript {
         StartCoroutine(FadeImage(true));
         MaxNumberOfStoredPositions = 0;
         gameObject.GetComponent<AudioManager>().Play("GeneralGameSound");
+        StartCoroutine(FadeImage(true));
 
     }
 
@@ -134,7 +135,10 @@ public class PlayerScript : CharacterScript {
     {
         Debug.Log("Player Script - Collision EXIT");
         _isColliding = false;
-        PressEnterContainer.SetActive(false);
+        if (collision.gameObject.tag.Equals("Door"))
+        {
+            PressEnterContainer.SetActive(false);
+        }
     }
 
 
@@ -153,6 +157,9 @@ public class PlayerScript : CharacterScript {
 
     public void SetGameOver()
     {
+        HelperFunctions.StopAllGuards();
+        HelperFunctions.StopAllCameras();
+        HelperFunctions.StopAlarmSystem();
         gameOver.SetActive(true);
         _gameIsOver = true;
 

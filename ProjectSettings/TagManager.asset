@@ -17,6 +17,8 @@ TagManager:
   - Key
   - Cage
   - DialogObstacle
+  - AlarmSystem
+  - CageEmpty
   layers:
   - Default
   - TransparentFX
