@@ -18,6 +18,11 @@ public class PlayerScript : CharacterScript {
     private bool _goToNextLvlPossible;
     public Image goToNextLvlImg;
 
+    private static readonly float _wideCollider = 0.58f;
+    private static readonly float _narrowCollider = 0.25f;
+
+    private BoxCollider2D _dogCollider;
+
     // Use this for initialization
     void Start()
     {
@@ -29,7 +34,9 @@ public class PlayerScript : CharacterScript {
         StartCoroutine(FadeImage(true));
         MaxNumberOfStoredPositions = 0;
         gameObject.GetComponent<AudioManager>().Play("GeneralGameSound");
+        StartCoroutine(FadeImage(true));
 
+        _dogCollider = gameObject.GetComponent<BoxCollider2D>();
         if (SceneManager.GetActiveScene().name.Equals("Level_1"))
         {
             PlayerPrefs.SetInt("difficulty", 0); //0 = easy
@@ -40,8 +47,6 @@ public class PlayerScript : CharacterScript {
     // Update is called once per frame
     protected override void Update()
     {
-        
-
         if (_goToNextLvlPossible)
         {
             if (Input.GetKeyDown(KeyCode.Return))
@@ -75,24 +80,31 @@ public class PlayerScript : CharacterScript {
         {
             animatorDirection = Constants.DirectionUp;
             direction += Vector2.up;
+            _isMoving = true;
+            _dogCollider.size = new Vector2(_narrowCollider, _dogCollider.size.y);// = _narrowCollider;
         }
         else if (Input.GetKey(KeyCode.DownArrow))
         {
             animatorDirection = Constants.DirectionDown;
             direction += Vector2.down;
+            _isMoving = true;
+            _dogCollider.size = new Vector2(_narrowCollider, _dogCollider.size.y);
         }
         else if (Input.GetKey(KeyCode.LeftArrow))
         {
             animatorDirection = Constants.DirectionLeft;
             direction += Vector2.left;
+            _isMoving = true;
+            _dogCollider.size = new Vector2(_wideCollider, _dogCollider.size.y);
         }
         else if (Input.GetKey(KeyCode.RightArrow))
         {
             animatorDirection = Constants.DirectionRight;
             direction += Vector2.right;
-        } else
-        {
+            //_isMoving = true;
+            _dogCollider.size = new Vector2(_wideCollider, _dogCollider.size.y);
             animatorDirection = _oldAnimatorDirection * 10;
+            _isMoving = false;
         }
 
         _oldAnimatorDirection = animatorDirection;
@@ -130,13 +142,16 @@ public class PlayerScript : CharacterScript {
         }
 
         _isColliding = true;
-
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
+        Debug.Log("Player Script - Collision EXIT");
         _isColliding = false;
-        PressEnterContainer.SetActive(false);
+        if (collision.gameObject.tag.Equals("Door"))
+        {
+            PressEnterContainer.SetActive(false);
+        }
     }
 
 
@@ -153,7 +168,8 @@ public class PlayerScript : CharacterScript {
         }
     }
 
-    public void SetGameOver(){
+    public void SetGameOver()
+    {
         HelperFunctions.StopAllGuards();
         HelperFunctions.StopAllCameras();
         HelperFunctions.StopAlarmSystem();
@@ -165,7 +181,7 @@ public class PlayerScript : CharacterScript {
         foreach (var dog in otherDogs)
         {
             var script = dog.GetComponent<OtherDogFolowingMainDogScript>();
-            if(script != null)
+            if (script != null)
                 script.IsFree = false;
         }
     }
@@ -203,7 +219,7 @@ public class PlayerScript : CharacterScript {
         else
         {
             // loop over 1 second
-            for (float i = 0; i <= 3; i += Time.deltaTime)
+            for (float i = 0; i <= 1; i += Time.deltaTime)
             {
                 // set color with i as alpha
                 goToNextLvlImg.color = new Color(0, 0, 0, i);
@@ -211,5 +227,4 @@ public class PlayerScript : CharacterScript {
             }
         }
     }
-    
 }

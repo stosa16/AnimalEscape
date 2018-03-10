@@ -19,7 +19,7 @@ public class FieldOfViewScript : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Gesichtet");
+        //Debug.Log("Gesichtet");
         var tag = collision.gameObject.tag;
         if (gameObject.tag.Equals("DialogObstacle"))
         {
@@ -27,7 +27,7 @@ public class FieldOfViewScript : MonoBehaviour {
         }
         if (tag.Equals("Spieler") || tag.Equals("OtherDog"))
         {
-            Debug.Log("Spieler detected");
+           // Debug.Log("Spieler detected");
             GameObject player = GameObject.FindGameObjectWithTag("Spieler");
             PlayerScript ps = player.GetComponent<PlayerScript>();
             //ps._gameIsOver = true;

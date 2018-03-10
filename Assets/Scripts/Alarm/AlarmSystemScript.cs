@@ -76,7 +76,7 @@ namespace Assets.Scripts.Alarm
 
         private void OnCollisionEnter2D(Collision2D collision)
         {
-            Debug.Log("Alarm System Script - Alarm collides with " + collision.transform.tag);
+            //Debug.Log("Alarm System Script - Alarm collides with " + collision.transform.tag);
             if(AlarmNotActive.activeSelf)
             {
                 return;
@@ -90,7 +90,7 @@ namespace Assets.Scripts.Alarm
 
         private void OnCollisionExit2D(Collision2D collision)
         {
-            Debug.Log("Alarm System Script - ALarm is collision exit");
+            //Debug.Log("Alarm System Script - ALarm is collision exit");
 
             if (collision.transform.tag.Equals("Spieler"))
             {

@@ -142,7 +142,7 @@ public class MenuControl : MonoBehaviour {
 	// RESET ALL MENUS TO STANDARD STATE 
 	void resetMenu(){
 		foreach (Menu m in menu) {											// Scrolls through the entire menu list
-			m.menuDisable ();												// Become standard
+	//		m.menuDisable ();												// Become standard
 		}
 	}// END
 

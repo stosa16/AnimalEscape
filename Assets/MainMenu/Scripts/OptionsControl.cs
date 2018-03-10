@@ -93,7 +93,7 @@ public class OptionsControl : MonoBehaviour {
 	// Updates all amount text
 	public void updateAmountsText(){
 		for (int i = 0; i <= amounts.Length-1; i++) {							// Walks up to the length of the vector amounts
-			amounts [i].text = "" +  sliders [i].value.ToString("F2");			// Sets the text of the amounts as the value of the slider and I define F2 formatting (example: 0.50)
+	// broken		amounts [i].text = "" +  sliders [i].value.ToString("F2");			// Sets the text of the amounts as the value of the slider and I define F2 formatting (example: 0.50)
 		}
 	}// END
 
@@ -129,47 +129,47 @@ public class OptionsControl : MonoBehaviour {
 	// Save all values in _gameConfig(Class GameConfig)
 	public void saveGameConfig(){
 		// GRAPHICS
-		_gameConfig.displayMode = dropdowns [0].value;
-		_gameConfig.targetDisplay = dropdowns [1].value;
-		_gameConfig.resulationId = dropdowns [2].value;
-		_gameConfig.graphicsQuality = dropdowns [3].value;
+		//_gameConfig.displayMode = dropdowns [0].value;
+		//_gameConfig.targetDisplay = dropdowns [1].value;
+		//_gameConfig.resulationId = dropdowns [2].value;
+		//_gameConfig.graphicsQuality = dropdowns [3].value;
 
-		// AUDIO
-		_gameConfig.masterVolume = sliders [0].value;
-		_gameConfig.musicVolume = sliders [1].value;
-		_gameConfig.effectsVolume = sliders [2].value;
-		_gameConfig.voiceVolume = sliders [3].value;
-		_gameConfig.micVolume = sliders [4].value;
-		_gameConfig.soundBackground = toggles[0].isOn;
+		//// AUDIO
+		//_gameConfig.masterVolume = sliders [0].value;
+		//_gameConfig.musicVolume = sliders [1].value;
+		//_gameConfig.effectsVolume = sliders [2].value;
+		//_gameConfig.voiceVolume = sliders [3].value;
+		//_gameConfig.micVolume = sliders [4].value;
+		//_gameConfig.soundBackground = toggles[0].isOn;
 
-		// GAME
-		_gameConfig.horizontalSensitivy = sliders [5].value;
-		_gameConfig.verticalSensitivy = sliders [6].value;
-		_gameConfig.difficuly = dropdowns[6].value;
-		_gameConfig.tips = toggles[1].isOn;	
+		//// GAME
+		//_gameConfig.horizontalSensitivy = sliders [5].value;
+		//_gameConfig.verticalSensitivy = sliders [6].value;
+		//_gameConfig.difficuly = dropdowns[6].value;
+		//_gameConfig.tips = toggles[1].isOn;	
 	}// END
 
 	// Sets the values according to the variable _gameConfig(class GameConfig)
 	public void setValues(){
 		// GRAPHICS
-		dropdowns [0].value = _gameConfig.displayMode;
+	//	dropdowns [0].value = _gameConfig.displayMode;
 		dropdowns [1].value = _gameConfig.targetDisplay;
 		dropdowns [2].value = _gameConfig.resulationId;
 		dropdowns [3].value = _gameConfig.graphicsQuality;
 
 		// AUDIO
-		sliders [0].value = _gameConfig.masterVolume;
-		sliders [1].value = _gameConfig.musicVolume;
-		sliders [2].value = _gameConfig.effectsVolume;
-		sliders [3].value = _gameConfig.voiceVolume;
-		sliders [4].value = _gameConfig.micVolume;
-		toggles[0].isOn = _gameConfig.soundBackground;
+	 //	sliders [0].value = _gameConfig.masterVolume;
+		//sliders [1].value = _gameConfig.musicVolume;
+		//sliders [2].value = _gameConfig.effectsVolume;
+		//sliders [3].value = _gameConfig.voiceVolume;
+		//sliders [4].value = _gameConfig.micVolume;
+		//toggles[0].isOn = _gameConfig.soundBackground;
 
 		// GAME
-		sliders [5].value = _gameConfig.horizontalSensitivy;
-		sliders [6].value = _gameConfig.verticalSensitivy;
+		//sliders [5].value = _gameConfig.horizontalSensitivy;
+		//sliders [6].value = _gameConfig.verticalSensitivy;
 		dropdowns [6].value = _gameConfig.difficuly;
-		toggles [1].isOn = _gameConfig.tips;
+	//	toggles [1].isOn = _gameConfig.tips;
 
 	}// END
 	//------------------------------------------------------------------------END METHODS JSON--------------------------------------------------------------------------\\
@@ -178,25 +178,24 @@ public class OptionsControl : MonoBehaviour {
 	//------------------------------------------------------------------------START METHODS SET CONFIG IN GAME----------------------------------------------------------\\
 	// Change settings in game
 	public void changeSettingsGame(){
-		changeDisplayMode ();							// Call the method
+							// Call the method
 		changeTargetDisplay ();							// Call the method
 		changeResolution ();							// Call the method
 		changeGraphicsQuality ();						// Call the method
-		changeAntiAliasing ();							// Call the method
-		changeVSYNC ();									// Call the method
+
 	}// END
 
 	// Changes screen mode in game
-	public void changeDisplayMode(){
-		switch (dropdowns[0].value) {
-		case 0:											// If it is the 0 option
-			Screen.fullScreen = true;					// Set fullscreen true
-			break;
-		case 1:											// If it is the 1 option
-			Screen.fullScreen = false;					// Set fullscreen false
-			break;
-		}
-	}// END
+	//public void changeDisplayMode(){
+	//	switch (dropdowns[0].value) {
+	//	case 0:											// If it is the 0 option
+	//		Screen.fullScreen = true;					// Set fullscreen true
+	//		break;
+	//	case 1:											// If it is the 1 option
+	//		Screen.fullScreen = false;					// Set fullscreen false
+	//		break;
+	//	}
+	//}// END
 
 	// Change the target display in the game
 	public void changeTargetDisplay(){
