@@ -38,6 +38,7 @@ namespace Assets.Scripts.Alarm
                     AlarmNotActive.SetActive(true);
                     TimerText.SendMessage("AlarmDeactivated");
                     FindObjectOfType<AudioManager>().Stop("AlarmSound");
+                    HelperFunctions.ShutDownLaserWalls();
                 }
             }
         }

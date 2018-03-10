@@ -18,6 +18,15 @@ public class HelperFunctions {
         }
     }
 
+    public static void ShutDownLaserWalls()
+    {
+        GameObject laserWallContainer = GameObject.Find("LaserWalls");
+        if (laserWallContainer == null)
+            return;
+
+        laserWallContainer.SetActive(false);
+    }
+
     public static void MoveAllGuards()
     {
         GameObject guardsContainer = GameObject.Find("CatchObstacles");

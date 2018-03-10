@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using System;
 
 public class PlayerScript : CharacterScript {
 
@@ -29,6 +30,11 @@ public class PlayerScript : CharacterScript {
         MaxNumberOfStoredPositions = 0;
         gameObject.GetComponent<AudioManager>().Play("GeneralGameSound");
 
+        if (SceneManager.GetActiveScene().name.Equals("Level_1"))
+        {
+            PlayerPrefs.SetInt("difficulty", 0); //0 = easy
+            PlayerPrefs.SetInt("saved_dogs", 0);
+        }
     }
 
     // Update is called once per frame
@@ -41,7 +47,9 @@ public class PlayerScript : CharacterScript {
             if (Input.GetKeyDown(KeyCode.Return))
             {
                 Debug.Log("Go to next level after hit enter.");
+                PressEnterContainer.SetActive(false);
                 StartCoroutine(FadeImage(false));
+                GoToNextLevel();
             }
         }
 
@@ -162,6 +170,12 @@ public class PlayerScript : CharacterScript {
         }
     }
 
+    private void GoToNextLevel()
+    {
+        var levelNumber = Int32.Parse(SceneManager.GetActiveScene().name.Split('_')[1]) + 1;
+        SceneManager.LoadScene("Level_" + levelNumber, LoadSceneMode.Single);
+    }
+
     public void DisableInput()
     {
         inputEnabled = false;
@@ -189,7 +203,7 @@ public class PlayerScript : CharacterScript {
         else
         {
             // loop over 1 second
-            for (float i = 0; i <= 1; i += Time.deltaTime)
+            for (float i = 0; i <= 3; i += Time.deltaTime)
             {
                 // set color with i as alpha
                 goToNextLvlImg.color = new Color(0, 0, 0, i);

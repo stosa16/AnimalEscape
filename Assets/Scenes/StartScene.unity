@@ -227,7 +227,6 @@ GameObject:
   m_Component:
   - component: {fileID: 888278213}
   - component: {fileID: 888278212}
-  - component: {fileID: 888278214}
   m_Layer: 0
   m_Name: bigdog
   m_TagString: DialogObstacle
@@ -292,25 +291,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &888278214
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 888278211}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6511cd5873a624e41a272d69e5c196c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dogPlayer: {fileID: 0}
-  dialogue:
-    name: sandra
-    sentences:
-    - ich bin sandra
-    - ich nicht
-  dialogueManager: {fileID: 1828478352}
-  doSendPlayerNotifications: 0
 --- !u!1 &1068792148
 GameObject:
   m_ObjectHideFlags: 0
@@ -471,7 +451,6 @@ GameObject:
   - component: {fileID: 467760696}
   - component: {fileID: 1395460291}
   - component: {fileID: 1395460290}
-  - component: {fileID: 1395460293}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -509,23 +488,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1395460293
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1395460289}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb7eea7c0b3881a409ca8ef901bb3381, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-    name: klemens
-    sentences:
-    - das ist mein test
-    - nein das ist mein test
-  dogPlayer: {fileID: 888278211}
 --- !u!1 &1438554930
 GameObject:
   m_ObjectHideFlags: 0
@@ -1070,6 +1032,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1828478354}
   - component: {fileID: 1828478353}
+  - component: {fileID: 1828478356}
+  - component: {fileID: 1828478355}
   m_Layer: 0
   m_Name: DialogueManager
   m_TagString: Untagged
@@ -1091,7 +1055,6 @@ MonoBehaviour:
   nameText: {fileID: 1068792150}
   dialogueText: {fileID: 1167427533}
   _dogPlayer: {fileID: 888278211}
-  doSendNotificationsToPlayer: 0
   animator: {fileID: 1739329718}
 --- !u!4 &1828478354
 Transform:
@@ -1106,3 +1069,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1828478355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1828478352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6511cd5873a624e41a272d69e5c196c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dogPlayer: {fileID: 888278211}
+  dialogue:
+    name: sandra
+    sentences:
+    - test1
+    - test2
+  dialogueManager: {fileID: 1828478352}
+  doSendPlayerNotifications: 0
+--- !u!114 &1828478356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1828478352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb7eea7c0b3881a409ca8ef901bb3381, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueTriggerObject: {fileID: 1828478352}
