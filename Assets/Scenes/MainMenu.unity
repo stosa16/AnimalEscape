@@ -1994,7 +1994,7 @@ MonoBehaviour:
   - {fileID: 1117241891}
   noModes: 1
   resetAnim: 0
-  nameLoadLevel: LevelOne
+  nameLoadLevel: Level_1
   modes:
   - {fileID: 1082756127}
   - {fileID: 1387020940}
@@ -2007,8 +2007,8 @@ MonoBehaviour:
   maxScale: 1
   speedAnimScaleCredits: 0
   speedAnimDirCredits: 50
-  currentTab: 1
-  previousTab: 1
+  currentTab: 2
+  previousTab: 2
   spaceMenu: 40
   xSpace: 100
   yAdjust: 0
