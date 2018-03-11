@@ -136,6 +136,10 @@ public class PlayerScript : CharacterScript {
             {
                 return;
             }
+            if (SceneManager.GetActiveScene().name.Equals("Level_10") && !GameObject.Find("PinkDog").GetComponent<OtherDogFolowingMainDogScript>().IsFree)
+            {
+                return;
+            }
 
             _goToNextLvlPossible = true;
             PressEnterContainer.SetActive(true);
