@@ -37,7 +37,7 @@ namespace Assets.Scripts.Alarm
                     AlarmActiveLightBackside.SetActive(false);
                     AlarmNotActive.SetActive(true);
                     TimerText.SendMessage("AlarmDeactivated");
-                    FindObjectOfType<AudioManager>().Stop("AlarmSound");
+                    gameObject.GetComponent<AudioManager>().Stop("AlarmSound");
                     HelperFunctions.ShutDownLaserWalls();
                 }
             }
