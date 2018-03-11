@@ -79,7 +79,7 @@ public class OptionsControl : MonoBehaviour {
 	public void changeSelected(int sel){
 		_selected = sel;														// Put temporary variable in _selected
 		foreach (GameObject go in panelsOptions) {								// Walk by all game objects in panelsOptions
-			go.SetActive (false);												// Disables
+	//		go.SetActive (false);												// Disables
 		}
 
 		foreach (GameObject go2 in buttons) {									// Walk by all game objects in buttons
@@ -168,7 +168,7 @@ public class OptionsControl : MonoBehaviour {
 		// GAME
 		//sliders [5].value = _gameConfig.horizontalSensitivy;
 		//sliders [6].value = _gameConfig.verticalSensitivy;
-		dropdowns [6].value = _gameConfig.difficuly;
+	//	dropdowns [6].value = _gameConfig.difficuly;
 	//	toggles [1].isOn = _gameConfig.tips;
 
 	}// END
