@@ -132,6 +132,11 @@ public class PlayerScript : CharacterScript {
             //levelSuccess.SetActive(true);
             //_gameIsOver = true;
             //SceneManager.LoadScene("LevelWithCages");
+            if (SceneManager.GetActiveScene().name.Equals("Level_5") && !GameObject.Find("BrownDog").GetComponent<OtherDogFolowingMainDogScript>().IsFree)
+            {
+                return;
+            }
+
             _goToNextLvlPossible = true;
             PressEnterContainer.SetActive(true);
         }
