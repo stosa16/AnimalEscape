@@ -39,7 +39,7 @@ public class PlayerScript : CharacterScript {
         _dogCollider = gameObject.GetComponent<BoxCollider2D>();
         if (SceneManager.GetActiveScene().name.Equals("Level_1"))
         {
-            PlayerPrefs.SetInt("difficulty", 0); //0 = easy
+            PlayerPrefs.SetInt("difficulty", 1); //0 = easy
             PlayerPrefs.SetInt("saved_dogs", 0);
         }
     }

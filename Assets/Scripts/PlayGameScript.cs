@@ -7,7 +7,11 @@ public class PlayGameScript : MonoBehaviour {
     {
         //if()
         Debug.Log("Retry");
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        var pf = PlayerPrefs.GetInt("difficulty");
+        if(PlayerPrefs.GetInt("difficulty") == 1)
+            SceneManager.LoadScene("Level_1");
+        else
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
 
