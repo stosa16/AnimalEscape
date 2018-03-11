@@ -164,6 +164,15 @@ public class PlayerScript : CharacterScript {
         }
     }
 
+    public void SetDiffOne()
+    {
+        PlayerPrefs.SetInt("difficulty", 0);
+    }
+
+    public void SetDiffTwo()
+    {
+        PlayerPrefs.SetInt("difficulty", 1);
+    }
 
 
     private void OnTriggerEnter2D(Collider2D collision)
