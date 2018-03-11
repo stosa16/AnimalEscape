@@ -136,6 +136,10 @@ public class PlayerScript : CharacterScript {
             {
                 return;
             }
+            if (SceneManager.GetActiveScene().name.Equals("Level_10") && !GameObject.Find("PinkDog").GetComponent<OtherDogFolowingMainDogScript>().IsFree)
+            {
+                return;
+            }
 
             _goToNextLvlPossible = true;
             PressEnterContainer.SetActive(true);
@@ -160,6 +164,15 @@ public class PlayerScript : CharacterScript {
         }
     }
 
+    public void SetDiffOne()
+    {
+        PlayerPrefs.SetInt("difficulty", 0);
+    }
+
+    public void SetDiffTwo()
+    {
+        PlayerPrefs.SetInt("difficulty", 1);
+    }
 
 
     private void OnTriggerEnter2D(Collider2D collision)
