@@ -2007,8 +2007,8 @@ MonoBehaviour:
   maxScale: 1
   speedAnimScaleCredits: 0
   speedAnimDirCredits: 50
-  currentTab: 2
-  previousTab: 2
+  currentTab: 0
+  previousTab: 0
   spaceMenu: 40
   xSpace: 100
   yAdjust: 0

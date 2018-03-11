@@ -99,22 +99,22 @@ public class HelperFunctions {
                 }
                 if (cltc != null)
                 {
-                    clm.StopCameraRotation();
+                    cltc.StopCameraRotation();
                     return;
                 }
                 if (crm != null)
                 {
-                    clm.StopCameraRotation();
+                    crm.StopCameraRotation();
                     return;
                 }
                 if (crtc != null)
                 {
-                    clm.StopCameraRotation();
+                    crtc.StopCameraRotation();
                     return;
                 }
                 if (ctm != null)
                 {
-                    clm.StopCameraRotation();
+                    ctm.StopCameraRotation();
                     return;
                 }
             }           
