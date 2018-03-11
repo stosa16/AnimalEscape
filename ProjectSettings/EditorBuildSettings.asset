@@ -27,8 +27,8 @@ EditorBuildSettings:
     path: Assets/Scenes/Level_4.unity
     guid: 3097897a4f2ee5e4797dceee70b314df
   - enabled: 1
-    path: Assets/Scenes/EminaLevel.unity
-    guid: 6f382b6564243ec499b587fb503f00be
+    path: Assets/Scenes/Level_5.unity
+    guid: b146fa44445506b4ca9f3c5c456c8d28
   - enabled: 1
     path: Assets/Scenes/Level_6.unity
     guid: ecaca2e4454b69547a9c71bfd5ffeea3
