@@ -101,8 +101,9 @@ public class PlayerScript : CharacterScript {
         {
             animatorDirection = Constants.DirectionRight;
             direction += Vector2.right;
-            //_isMoving = true;
+            _isMoving = true;
             _dogCollider.size = new Vector2(_wideCollider, _dogCollider.size.y);
+        } else {
             animatorDirection = _oldAnimatorDirection * 10;
             _isMoving = false;
         }
