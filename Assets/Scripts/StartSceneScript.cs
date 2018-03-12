@@ -9,4 +9,9 @@ public class StartSceneScript : MonoBehaviour {
     {
         SceneManager.LoadScene("StartScene");
     }
+
+    public void StartLevelsClicked()
+    {
+        SceneManager.LoadScene("Level_1");
+    }
 }
