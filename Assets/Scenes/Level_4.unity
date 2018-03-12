@@ -163,7 +163,7 @@ Prefab:
     - target: {fileID: 224864334488905064, guid: 93feba0eeb0ef5c4cb794726b457b5bc,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: -0.000015258789
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224864334488905064, guid: 93feba0eeb0ef5c4cb794726b457b5bc,
         type: 2}
@@ -173,32 +173,32 @@ Prefab:
     - target: {fileID: 224864334488905064, guid: 93feba0eeb0ef5c4cb794726b457b5bc,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 890
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224864334488905064, guid: 93feba0eeb0ef5c4cb794726b457b5bc,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 422
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224864334488905064, guid: 93feba0eeb0ef5c4cb794726b457b5bc,
         type: 2}
       propertyPath: m_AnchorMin.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224864334488905064, guid: 93feba0eeb0ef5c4cb794726b457b5bc,
         type: 2}
       propertyPath: m_AnchorMin.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224864334488905064, guid: 93feba0eeb0ef5c4cb794726b457b5bc,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224864334488905064, guid: 93feba0eeb0ef5c4cb794726b457b5bc,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224864334488905064, guid: 93feba0eeb0ef5c4cb794726b457b5bc,
         type: 2}
@@ -7881,10 +7881,10 @@ RectTransform:
   m_Father: {fileID: 1506482753}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000015258789, y: 0}
-  m_SizeDelta: {x: 890, y: 422}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1668169872
 MonoBehaviour:
@@ -8078,7 +8078,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1762294256647060, guid: 1a4966dec86b49f4184cccab6e2a730b, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1a4966dec86b49f4184cccab6e2a730b, type: 2}

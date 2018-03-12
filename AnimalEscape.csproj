@@ -321,6 +321,7 @@
     <Compile Include="Assets\Scripts\Dialogue\Dialogue.cs" />
     <Compile Include="Assets\Scripts\Dialogue\DialogueManager.cs" />
     <Compile Include="Assets\Scripts\Dialogue\DialogueTrigger.cs" />
+    <Compile Include="Assets\Scripts\DifficultyThing.cs" />
     <Compile Include="Assets\Scripts\DogPositionBuilder.cs" />
     <Compile Include="Assets\Scripts\DogState.cs" />
     <Compile Include="Assets\Scripts\FieldOfViewScript.cs" />
@@ -331,9 +332,11 @@
     <Compile Include="Assets\Scripts\ObstacleScript.cs" />
     <Compile Include="Assets\Scripts\OtherDogFolowingMainDogScript.cs" />
     <Compile Include="Assets\Scripts\OtherDogScript.cs" />
+    <Compile Include="Assets\Scripts\OutroScript.cs" />
     <Compile Include="Assets\Scripts\PlayerScript.cs" />
     <Compile Include="Assets\Scripts\PlayGameScript.cs" />
     <Compile Include="Assets\Scripts\Sound.cs" />
+    <Compile Include="Assets\Scripts\StartSceneScript.cs" />
     <Compile Include="Assets\Scripts\TriggerDialogueOnStart.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

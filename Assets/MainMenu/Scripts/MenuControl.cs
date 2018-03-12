@@ -149,7 +149,7 @@ public class MenuControl : MonoBehaviour {
 	// RESET ALL MODE TO STANDARD STATE 
 	void resetMode(){
 		foreach (Mode m in modes) {											// Scrolls through the entire modes list
-			m.mouseExit ();													// Become standard
+//			m.mouseExit ();													// Become standard
 		}
 	}// END
 
