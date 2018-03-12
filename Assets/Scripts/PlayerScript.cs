@@ -39,7 +39,7 @@ public class PlayerScript : CharacterScript {
         _dogCollider = gameObject.GetComponent<BoxCollider2D>();
         if (SceneManager.GetActiveScene().name.Equals("Level_1"))
         {
-            PlayerPrefs.SetInt("difficulty", 0); //0 = easy
+            //PlayerPrefs.SetInt("difficulty", 0); //0 = easy
             PlayerPrefs.SetInt("saved_dogs", 0);
         }
     }
@@ -52,6 +52,7 @@ public class PlayerScript : CharacterScript {
             if (Input.GetKeyDown(KeyCode.Return))
             {
                 Debug.Log("Go to next level after hit enter.");
+                SetNumberOfFreedDogs();
                 PressEnterContainer.SetActive(false);
                 StartCoroutine(FadeImage(false));
                 GoToNextLevel();
@@ -141,6 +142,7 @@ public class PlayerScript : CharacterScript {
                 return;
             }
 
+
             _goToNextLvlPossible = true;
             PressEnterContainer.SetActive(true);
         }
@@ -152,6 +154,21 @@ public class PlayerScript : CharacterScript {
         }
 
         _isColliding = true;
+    }
+
+    private void SetNumberOfFreedDogs()
+    {
+        var allFreeableDogs = (OtherDogFolowingMainDogScript[])FindObjectsOfType(typeof(OtherDogFolowingMainDogScript));
+        foreach (var d in allFreeableDogs)
+        {
+            if(d.IsFree)
+            {
+                int nr = PlayerPrefs.GetInt("saved_dogs");
+                nr++;
+                PlayerPrefs.SetInt("saved_dogs", nr);
+            }
+        }
+        Debug.Log("Number of freed dogs:" + PlayerPrefs.GetInt("saved_dogs"));
     }
 
     private void OnCollisionExit2D(Collision2D collision)
