@@ -224,6 +224,12 @@ public class PlayerScript : CharacterScript {
 
     private void GoToNextLevel()
     {
+        if(SceneManager.GetActiveScene().name == "Level_10")
+        {
+            SceneManager.LoadScene("OutroScene", LoadSceneMode.Single);
+            return;
+        }
+
         var levelNumber = Int32.Parse(SceneManager.GetActiveScene().name.Split('_')[1]) + 1;
         SceneManager.LoadScene("Level_" + levelNumber, LoadSceneMode.Single);
     }
