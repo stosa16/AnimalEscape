@@ -7,6 +7,6 @@ public class StartSceneScript : MonoBehaviour {
 
 	public void StartGameClicked()
     {
-        SceneManager.LoadScene("Level_1");
+        SceneManager.LoadScene("StartScene");
     }
 }
