@@ -8,12 +8,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: b57f852bf33daf544986226edc763579
-  - enabled: 0
-    path: Assets/Scenes/LevelOne.unity
-    guid: 79e7cf0ba1722f74cb175abdf80c55fa
-  - enabled: 0
-    path: Assets/Scenes/MarkusLevelOne.unity
-    guid: 6e84dc90bdbf41f40beb49cdcc528d3f
+  - enabled: 1
+    path: Assets/Scenes/StartScene.unity
+    guid: 8aa3860e7d3cb7443baff720503a82ec
   - enabled: 1
     path: Assets/Scenes/Level_1.unity
     guid: 053f1d8f56a6a234ea7e3988f0c6db1a
@@ -33,5 +30,17 @@ EditorBuildSettings:
     path: Assets/Scenes/Level_6.unity
     guid: ecaca2e4454b69547a9c71bfd5ffeea3
   - enabled: 1
-    path: Assets/Scenes/StartScene.unity
-    guid: 8aa3860e7d3cb7443baff720503a82ec
+    path: Assets/Scenes/Level_7.unity
+    guid: ae3658890be9f264dacfbf2f0a0648ec
+  - enabled: 1
+    path: Assets/Scenes/Level_8.unity
+    guid: 6f382b6564243ec499b587fb503f00be
+  - enabled: 1
+    path: Assets/Scenes/Level_9.unity
+    guid: 6b20ab3ede20e164bb70cd4046c55dca
+  - enabled: 1
+    path: Assets/Scenes/Level_10.unity
+    guid: 31097a1221c3c0a4eaaa93beac0f7b78
+  - enabled: 1
+    path: Assets/Scenes/OutroScene.unity
+    guid: 8067cf5a275431645ada0d14b37d54f3
