@@ -4514,6 +4514,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1.0002825
       objectReference: {fileID: 0}
+    - target: {fileID: 1475543537285192, guid: b43a81e9fb9b3aa49919fe832358c923, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b43a81e9fb9b3aa49919fe832358c923, type: 2}
   m_IsPrefabParent: 0
@@ -4611,7 +4615,6 @@ GameObject:
   - component: {fileID: 1011607785}
   - component: {fileID: 1011607784}
   - component: {fileID: 1011607783}
-  - component: {fileID: 1011607782}
   - component: {fileID: 1011607781}
   m_Layer: 0
   m_Name: Dog
@@ -4631,21 +4634,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce199dea4a41b604dbf9ed293a040bf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1011607782
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1011607780}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0c4f6e9529e16849bb9a0c4133516f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HasKey: 0
-  PressKText: {fileID: 0}
-  KeyStatus: {fileID: 0}
-  EmptyCageSprite: {fileID: 21300000, guid: db60582b1a56c594e915216c05118b49, type: 3}
 --- !u!95 &1011607783
 Animator:
   serializedVersion: 3
@@ -4750,8 +4738,8 @@ MonoBehaviour:
   _gameIsOver: 0
   gameOver: {fileID: 1831465743}
   levelSuccess: {fileID: 968361353}
-  PressEnterContainer: {fileID: 0}
-  goToNextLvlImg: {fileID: 0}
+  PressEnterContainer: {fileID: 1568279337}
+  goToNextLvlImg: {fileID: 166976345}
 --- !u!212 &1011607788
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4805,7 +4793,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1011607780}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.08, y: -4.47, z: -0.072265625}
+  m_LocalPosition: {x: 0.13, y: -4.55, z: -0.072265625}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 120418040}
