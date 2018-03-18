@@ -10903,7 +10903,7 @@ Prefab:
         type: 2}
       propertyPath: dogPlayer
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1557028060}
     - target: {fileID: 1191818762937416, guid: 93c6f5a4ed19d7c4197f1833d3ec952e, type: 2}
       propertyPath: m_Name
       value: BackgroundTime

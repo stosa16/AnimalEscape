@@ -62,7 +62,7 @@ public class PlayerScript : CharacterScript {
         if (_gameIsOver)
             return;
         GetInput();
-        Move();
+        if(_isMoving) Move();
     }
 
     private void GetInput()
@@ -80,28 +80,28 @@ public class PlayerScript : CharacterScript {
         if (Input.GetKey(KeyCode.UpArrow))
         {
             animatorDirection = Constants.DirectionUp;
-            direction += Vector2.up;
+            direction = Vector2.up;
             _isMoving = true;
             _dogCollider.size = new Vector2(_narrowCollider, _dogCollider.size.y);// = _narrowCollider;
         }
         else if (Input.GetKey(KeyCode.DownArrow))
         {
             animatorDirection = Constants.DirectionDown;
-            direction += Vector2.down;
+            direction = Vector2.down;
             _isMoving = true;
             _dogCollider.size = new Vector2(_narrowCollider, _dogCollider.size.y);
         }
         else if (Input.GetKey(KeyCode.LeftArrow))
         {
             animatorDirection = Constants.DirectionLeft;
-            direction += Vector2.left;
+            direction = Vector2.left;
             _isMoving = true;
             _dogCollider.size = new Vector2(_wideCollider, _dogCollider.size.y);
         }
         else if (Input.GetKey(KeyCode.RightArrow))
         {
             animatorDirection = Constants.DirectionRight;
-            direction += Vector2.right;
+            direction = Vector2.right;
             _isMoving = true;
             _dogCollider.size = new Vector2(_wideCollider, _dogCollider.size.y);
         } else {
@@ -194,10 +194,6 @@ public class PlayerScript : CharacterScript {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag.Equals("OtherDog"))
-        {
-            collision.gameObject.GetComponent<OtherDogScript>().ChangeDirectionFromObstacle();
-        }
         if (collision.gameObject.tag.Equals("DialogObstacle"))
         {
             collision.gameObject.GetComponent<DialogueTrigger>().TriggerDialogue();

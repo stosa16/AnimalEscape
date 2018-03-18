@@ -96,15 +96,7 @@ public class GuardScript : MonoBehaviour {
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag.Equals("OtherDog"))
-        {
-            collision.gameObject.GetComponent<OtherDogScript>().ChangeDirectionFromGuard();
-        }
-    }
-
-    public void SetGuardMovement(bool shouldMove)
+        public void SetGuardMovement(bool shouldMove)
     {
         _guardMoving = shouldMove;
     }

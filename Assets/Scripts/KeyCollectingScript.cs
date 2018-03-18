@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Linq;
+using UnityEngine;
 
 namespace Assets.Scripts
 {
@@ -14,10 +15,10 @@ namespace Assets.Scripts
 
         public Sprite EmptyCageSprite;
 
-        // Use this for initialization
+                // Use this for initialization
         void Start()
         {
-            HasKey = false;
+            //HasKey = false;
             _cageApproached = null;
         }
 
@@ -42,7 +43,7 @@ namespace Assets.Scripts
         {
             if (collision.gameObject.tag.Equals("Cage"))
             {
-                FindObjectOfType<AudioManager>().Play("HitCage");
+                gameObject.GetComponent<AudioManager>().Play("HitCage");
                 if(HasKey)
                     _cageApproached = collision.gameObject;
             }
@@ -64,10 +65,11 @@ namespace Assets.Scripts
 
         private void UnlockTheDog()
         {
-            FindObjectOfType<AudioManager>().Play("Barking");
+            //gameObject.GetComponent<AudioManager>().Play("Barking");
 
             var dogFromCage = _cageApproached.transform.GetChild(0).gameObject;
             _cageApproached.GetComponent<SpriteRenderer>().sprite = EmptyCageSprite;
+            
             var theDogScript = dogFromCage.GetComponent<OtherDogFolowingMainDogScript>();
             theDogScript.StartFollowingMainDog();
 

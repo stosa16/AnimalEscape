@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using UnityEngine;
 
 namespace Assets.Scripts {
@@ -37,9 +38,11 @@ namespace Assets.Scripts {
         {
             _character.MaxNumberOfStoredPositions += FollowingDistance;
 
-            DogPosition = DogPositionBuilder.GetNext();
-            MakeItSimulated();
             IsFree = true;
+
+            var numberOfSavedDogs = GameObject.FindGameObjectsWithTag("OtherDog").Count(dog => dog.GetComponent<OtherDogFolowingMainDogScript>().IsFree == true);
+            DogPosition = numberOfSavedDogs * 30;
+            MakeItSimulated();
         }
 
         void Update()

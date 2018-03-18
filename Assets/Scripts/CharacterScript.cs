@@ -32,16 +32,18 @@ public abstract class CharacterScript : MonoBehaviour {
     // Update is called once per frame
     protected virtual void Update()
     {
-        Move();
+        //Move();
     }
+
 
     public void Move()
     {
         GetComponent<Rigidbody2D>().MovePosition(new Vector2(transform.position.x + direction.x * speed * Time.deltaTime, transform.position.y + direction.y * speed * Time.deltaTime));
 
-       // gameObject.GetComponent<Transform>().Translate(direction * speed * Time.deltaTime);
+        //gameObject.GetComponent<Transform>().Translate(direction * speed * Time.deltaTime);
 
         Vector2 mainDogCurrentPosition = GameObject.FindGameObjectWithTag("Spieler").transform.position;
+
         int mainDogCurrentDirection = GameObject.FindGameObjectWithTag("Spieler").GetComponent<Animator>().GetInteger("Direction");
 
         if (PreviousPositions.Count < MaxNumberOfStoredPositions)
